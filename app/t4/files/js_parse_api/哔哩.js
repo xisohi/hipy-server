@@ -1,5 +1,6 @@
 // print(env);
 // http://localhost:5707/parse/api/哔哩.js?url=https://www.bilibili.com/bangumi/play/ep704873
+// http://localhost:5707/parse/api/哔哩.js?debug=1&url=https://www.bilibili.com/bangumi/play/ep704873
 // input = 'https://www.bilibili.com/bangumi/play/ep704873';
 var flag = ['bilibili'];
 
@@ -80,6 +81,7 @@ function lazy() {
                     realUrl = purl.replace(/.*bilivideo.*?\/(.*)/, 'https://upos-szbyjkm8g1.bilivideo.com/$1');
 
                 } catch (e) {
+                    log(`访问地址发生了错误:${e.message} ${rurl}`);
                     realUrl = input;
                 }
             } else {

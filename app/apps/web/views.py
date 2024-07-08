@@ -698,6 +698,7 @@ def get_js_vip_parse(*,
     def getCryptoJS():
         return get_file_content(db, 'crypto-hiker.js')
 
+    debug = getParams('debug')
     resp = get_file_path(db, 'js_parse_api', filename)
     if isinstance(resp, int):
         raise HTTPException(status_code=resp)
@@ -723,6 +724,10 @@ def get_js_vip_parse(*,
     except Exception as e:
         logger.info(f'获取环境变量发生错误:{e}')
         env = {}
+
+    if debug:
+        env.update({'debug': 1})
+
     initContext(ctx, url, prefix_code, env, getParams, getCryptoJS)
     # ==================== 初始化js引擎结束 ======================
     try:
