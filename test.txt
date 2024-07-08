@@ -1,1 +1,5 @@
 测试改为私仓
+
+访问下面地址生成自己的token:
+
+https://github.com/settings/tokens
