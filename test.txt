@@ -13,9 +13,7 @@ git pull
 
 git clone https://username:personal_access_token@github.com/hjdhnx/hipy-server.git
 
-
 如果是已经 clone 的到源码目录执行 git remote set-url origin https://username:personal_access_token@github.com/hjdhnx/hipy-server.git
-
 
 文档教程：
 https://docs.github.com/zh/enterprise-cloud@latest/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
