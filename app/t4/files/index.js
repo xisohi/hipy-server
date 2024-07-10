@@ -72,7 +72,7 @@ async function main() {
         };
 
     });
-    let js_files = pathLib.readDir(pathLib.join(path_dir, js_path));
+    let js_files = pathLib.readDir(pathLib.join(path_dir, js_path)).filter(file => file && file.endsWith('.js'));
     // console.log(js_files);
     let live_files = pathLib.readDir(pathLib.join(path_dir, live_path));
     // console.log(live_files);
@@ -176,7 +176,7 @@ async function main() {
             extras.forEach((extra, index) => {
                 let ext_str = 'drpy_t3';
                 let _name = extras.length > 1 ? `${rname}${index}` : `${rname}`;
-                let ext_name = extra.includes('@') ? extra.split('@')[1]:_name;
+                let ext_name = extra.includes('@') ? extra.split('@')[1] : _name;
                 extra = extra.split('@')[0];
                 if (extra) {
                     try {

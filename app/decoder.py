@@ -25,7 +25,7 @@ def main():
     # base_dir = './dist/drpy_js'
     if not os.path.exists(base_dir):
         exit(f'不存在的路径:{base_dir}')
-    files = [Path(os.path.join(base_dir, file)).as_posix() for file in os.listdir(base_dir)]
+    files = [Path(os.path.join(base_dir, file)).as_posix() for file in os.listdir(base_dir) if file.endswith('.js')]
     print('=================获取待解密文件=========================')
     print(f'数量: {len(files)}')
     print(files)
