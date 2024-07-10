@@ -46,7 +46,7 @@ def main():
         encode_func = encode_func1
 
     base_dir = './t4/files/drpy_js'
-    files = [Path(os.path.join(base_dir, file)).as_posix() for file in os.listdir(base_dir)]
+    files = [Path(os.path.join(base_dir, file)).as_posix() for file in os.listdir(base_dir) if file.endswith('.js')]
     print('=================获取待加密文件=========================')
     print(f'数量: {len(files)}')
     print(files)
