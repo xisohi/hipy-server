@@ -8,7 +8,7 @@ var rule = {
     searchable: 2,
     quickSearch: 0,
     filterable: 1,
-    filter: 'H4sIAAAAAAAAAO2W30sbQRDH/5d96FPA3M9chPwlReRo76HUWoi2IBJIiNGQWI0ppkgP+2BrRBu8qISYmP412d3cf9Fbm2RmNx4Ixafk6dj5zDKzM9/Z222ikeXX2+S9t0WWCfUDut8jCbLufvDw+rO79sl7dFwX5tJFWLwQ5mhBcomx9WczPOmOra/crOeuvnub0ac8PD9h3WuVW7D/MOCFM5WbsP/HV+pXVa6lpg7s2y/m/55xcMChVeN/DlQHG/ht8FSEJKT4JaC98xkHyJGWOsN+Q3UwSG5FePwrMm/36WkVijxdP6vI+Ste2x1bl94sGQag6vFw4ANClW34tLIHBJ145zsrloBAMXnziN73gaAqFmos3wCShj2Vaz64BIIqx8oBL7cQ0nDe7OEKIZBMlLWUngan5Xf5cH8HFQLF2uvyxhFCJo7Fj1Esw3q6dREy4cSj5tnoEp3L0KWG0vu7YX+Apmayfk5D9aRuTvSy5bnZzKMBUUOlBqa6SnVMNZVqmCZVmkRUSytUS2PqqNTBNKXSFKa2Sm1MLZVamKq1ErOHWsEO6rR3CK2YruVW8N02q7fUVjA/zxrBJMDGx+xmZs3d2BQBVhJEf5F7Uog65goUQwc1l25PgdBA4ntPDCT0UbozBQIBSJehSMOJHQXRoIXe50zvxovpPV7UqCMzo6DF6t0xYvXu6LF6R8qR/vtiSvTYUdCNxSjM3SiY0e7oY+GR+K9X3Khzy2tF9FSDtvN2UUZQg7BQYeUbhKAtrH4q7bLRQ6lzI6OY16rQ/ULc8ydu2xbqzv0FneouCwkOAAA=4',
+    filter: 'H4sIAAAAAAAAAO2X32saQRDH/5d76JMQ74d3Z8C/pIRytD6UpimYtBCCYCIGY9qoIbWVSltIqia1UUkQf+TSf8bdPf+Luml0ZtcsBFqf9HH3M+vOznxnvNnRdG316Y72Kr6trWqk0iLv+1pI2/Bex/H6nbf+Nn5nuMG3M/VRus63xwstGbrfPauNyvv3u0+8RNx79vJFzJjyUbVMu02ZR+B8vkV7tzK34Py3c/LFl7nuTA3opx+00pgxcMGgUWO3R7KBDfyq9dANYXDxQ4v0qzMG4CPJdIaDkmxgask1bvE3yKw9IF8PIcjT9WOCPLypssIkyCvPV0wT7s7Vh34FEIpsqUIOakDgxSzbpukMEAgmqxVJbwAERXG3QFMlIFE4k2sy/wIIihzNfh72DxDSsd/05idCIJmx14J7OryW9S+I/xEFAt2112ClIkIWvoudoFeZkYdTN0YWvDionQbNa3TKEBJKetfDgY+qZrJ+TEKNsGFN9LId9xKxuw1ETZmamBoyNTDVZapjGpZpGFE9KlE9iqkrUxdTR6YOprZMbUwjMo1gKseK1x5KBT06Jv08pGK6FlPB9tv0+JecClpJ0VJrcsHmm8RWbN3b3OIXrIU0Yy59kota0QJ50UHMhe7JESpI3Pd4QUIehZ7JEQhAaIbcDVdZCjxBS70vmN7NueldLWqUkZlS0JV6d02l3l1DqXekHOF/n1eJoSwFw1yWwsKVgjWvUjBstahttagdtagdtXLdpXIXTrkR3MX/afAIOleskEbTBeSbNS9FBI+n3S7N5hGCfIwbvHDKRt/2flFEigGLt+plP148Vdv2/1I1y/riZAzRCeopYfa0Iazs/HfQyQFy1LOng+bc/Flwimdt9NmS9kl3D3V4+EF2UiGX3xECRQblAt09REg9zDrWskwWrEySfwAneSZu2xMAAA==',
     filter_url: '{% if fyclass !=1 %}{{fl.地区}}?page=fypage{% else %}{{fl.类型}}?page=fypage{{fl.地区}}{% endif %}{{fl.年份}}{{fl.排序}}',
     filter_def: {},
     headers: {
@@ -58,24 +58,26 @@ var rule = {
         let list1 = pdfa(html, '.mb-2.fullwidth&&a').map(it => pdfh(it, 'a&&Text') + '$' + pd(it, 'a&&href', input));
         // log(list1);
         lists.push(list1);
-        let reqUrls = v_tab_urls.slice(1).map(it => {
-            return {
-                url: it,
-                options: {
-                    timeout: 5000,
-                    headers: rule.headers
+        if (v_tab_urls.length > 1) {
+            let reqUrls = v_tab_urls.slice(1).map(it => {
+                return {
+                    url: it,
+                    options: {
+                        timeout: 5000,
+                        headers: rule.headers
+                    }
                 }
-            }
-        });
-        let htmls = batchFetch(reqUrls);
-        htmls.forEach((ht) => {
-            if (ht) {
-                let list0 = pdfa(ht, '.mb-2.fullwidth&&a').map(it => pdfh(it, 'a&&Text') + '$' + pd(it, 'a&&href', input));
-                lists.push(list0);
-            } else {
-                lists.push([]);
-            }
-        });
+            });
+            let htmls = batchFetch(reqUrls);
+            htmls.forEach((ht) => {
+                if (ht) {
+                    let list0 = pdfa(ht, '.mb-2.fullwidth&&a').map(it => pdfh(it, 'a&&Text') + '$' + pd(it, 'a&&href', input));
+                    lists.push(list0);
+                } else {
+                    lists.push([]);
+                }
+            });
+        }
         let playUrls = lists.map(it => it.join('#'));
         VOD.vod_play_url = playUrls.join('$$$');
     }),

@@ -58,24 +58,26 @@ var rule = {
         let list1 = pdfa(html, '.mb-2.fullwidth&&a').map(it => pdfh(it, 'a&&Text') + '$' + pd(it, 'a&&href', input));
         // log(list1);
         lists.push(list1);
-        let reqUrls = v_tab_urls.slice(1).map(it => {
-            return {
-                url: it,
-                options: {
-                    timeout: 5000,
-                    headers: rule.headers
+        if (v_tab_urls.length > 1) {
+            let reqUrls = v_tab_urls.slice(1).map(it => {
+                return {
+                    url: it,
+                    options: {
+                        timeout: 5000,
+                        headers: rule.headers
+                    }
                 }
-            }
-        });
-        let htmls = batchFetch(reqUrls);
-        htmls.forEach((ht) => {
-            if (ht) {
-                let list0 = pdfa(ht, '.mb-2.fullwidth&&a').map(it => pdfh(it, 'a&&Text') + '$' + pd(it, 'a&&href', input));
-                lists.push(list0);
-            } else {
-                lists.push([]);
-            }
-        });
+            });
+            let htmls = batchFetch(reqUrls);
+            htmls.forEach((ht) => {
+                if (ht) {
+                    let list0 = pdfa(ht, '.mb-2.fullwidth&&a').map(it => pdfh(it, 'a&&Text') + '$' + pd(it, 'a&&href', input));
+                    lists.push(list0);
+                } else {
+                    lists.push([]);
+                }
+            });
+        }
         let playUrls = lists.map(it => it.join('#'));
         VOD.vod_play_url = playUrls.join('$$$');
     }),
