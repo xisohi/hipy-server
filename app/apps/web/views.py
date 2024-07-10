@@ -204,7 +204,7 @@ async def hipy_configs(*,
     order_bys = [asc(curd_vod_rules.model.order_num)]
     hipy_rules = curd_vod_rules.search(db=db, status=1, group=groups['hipy'], file_type='.py', page=1, page_size=9999,
                                        order_bys=order_bys)
-    drpy_rules = curd_vod_rules.search(db=db, status=1, group=groups['drpy_js'], page=1, page_size=9999,
+    drpy_rules = curd_vod_rules.search(db=db, status=1, group=groups['drpy_js'], file_type='.js', page=1, page_size=9999,
                                        order_bys=order_bys)
     # print(hipy_rules.get('results')[0])
     hipy_rules = [{
