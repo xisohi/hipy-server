@@ -8,8 +8,15 @@ var rule = {
     quickSearch: 0,
     filterable: 1,
     filter_url: "{{fl.class or '44'}}",
-    filter: 'H4sIAAAAAAAAA5WV207iUBSG36XXXkBbELyet5h4YYxX43hjZpKJMUE5iDAUcBBFHGREDh4KFZQAtfRluvbefYvZAvsAk0ziTZPy9V/7X4e9OFBUZePzgfJl54eyoWzvbu3vK2vK3tbXHfqKn22oZen7963dbzuz7/befzYSMLaheUKf75D+pOvK4dqcIrPlTeueXaFPRiOc4nuXDDOoNsT3kwUNqZz6cQdGx95bnfRemFZQ3C7SE/FjDWViTLvOKUUoPiCdGIonFzQYjgpx9gm6Q+heQXrI8HpAqPN3nt1YUqsBKbjzTNopMG5I8YLhoCZyPn7C5SIyOriQYr5DQmykIN+HVNWbZJnvsDBmWKsn60FRkd9n6LKJ6n+gajKtiIzKJ2C2oJATtsJUu3m4uaaEPt7X6ggaFipb3oT1RlVF+eGtDlbRcwoLpkkFgPQlfsziVp4zMRCkl/DGLbhrQ7LDw0qVt/Lw6wgKaTItchyUI0PSIpkBixwQPSVuzRs50DrmpwodLlmQq3vjU86kbubOId+Yp8u7KYW9PfIvSygtEpXcmhVvFOMgJLUxi40mGtxyFpbPo3ZEDqrkBcdN/6Kz4kW6LzNAO0yHl+GosIP7d6RnzivMDpZrmxwga0SGSc6EYf/+yT93yZQXSBWGyesrtl+IIdh/ixcMaUKLnC6ctvkVk3JB/YclIiqOKlmZvGcwm2Ft/cNDjDJl/2aAmzVU7bOChaSbGouhizaJHSHzJ8fSjKernnONXRtKzwxL2wvoPb+uc50urw+/YXAg3f3cFXRvodiBdIblp6uSH6tIrAYn0nDjSY8m4o0LAgoj2idceqVYMNGguYr0prjD1k1QiwRWOF1WJFfgjv/B50mxrVRdRKdbCiVultW6NOoJFz82l4yrenTRzvDH/2sWi3fsojNTGhE9IpV49glpN0jPFlxb4Uu7m3Jh2a88eE6duI4UX4tKV9DOQ3JE9dLA6xF1ltPhXxyS0SNABwAA',
-
+    filter: 'H4sIAAAAAAAAA5WV207iUBSG36XXXkBbELyet5h4YYxX43hjZpKJMUE5iDAUcBBFHGREDh4KFZQAtfRluvbefYvZAvsAk0ziTZPy9V/7X4e9OFBUZePzgfJl54eyoWzvbu3vK2vK3tbXHfqKn22oZen7963dbzuz7/befzYSMLaheUKf75D+pOvK4dqcIrPlTeueXaFPRiOc4nuXDDOoNsT3kwUNqZz6cQdGx95bnfRemFZQ3C7SE/FjDWViTLvOKUUoPiCdGIonFzQYjgpx9gm6Q+heQXrI8HpAqPN3nt1YUqsBKbjzTNopMG5I8YLhoCZyPn7C5SIyOriQYr5DQmykIN+HVNWbZJnvsDBmWKsn60FRkd9n6LKJ6n+gajKtiIzKJ2C2oJATtsJUu3m4uaaEPt7X6ggaFipb3oT1RlVF+eGtDlbRcwoLpkkFgPQlfsziVp4zMRCkl/DGLbhrQ7LDw0qVt/Lw6wgKaTItchyUI0PSIpkBixwQPSVuzRs50DrmpwodLlmQq3vjU86kbubOId+Yp8u7KYW9PfIvSygtEpXcmhVvFOMgJLUxi40mGtxyFpbPo3ZEDqrkBcdN/6Kz4kW6LzNAO0yHl+GosIP7d6RnzivMDpZrmxwga0SGSc6EYf/+yT93yZQXSBWGyesrtl+IIdh/ixcMaUKLnC6ctvkVk3JB/YclIiqOKlmZvGcwm2Ft/cNDjDJl/2aAmzVU7bOChaSbGouhizaJHSHzJ8fSjKernnONXRtKzwxL2wvoPb+uc50urw+/YXAg3f3cFXRvodiBdIblp6uSH6tIrAYn0nDjSY8m4o0LAgoj2idceqVYMNGguYr0prjD1k1QiwRWOF1WJFfgjv/B50mxrVRdRKdbCiVultW6NOoJFz82l4yrenTRzvDH/2sWi3fsojNTGhE9IpV49glpN0jPFlxb4Uu7m3Jh2a88eE6duI4UX4tKV9DOQ3JE9dLA6xF1ltPhXxyS0SNABwAA'，
+    filter_def: {
+      37: {
+         class: '253'
+      },
+      62: {
+         class: '1485'
+      }
+   },
     timeout: 5000,
     class_name: '有声小说&音乐&相声评书&影视原声',
     class_url: '2&37&5&62',
