@@ -37,12 +37,23 @@ class Drpy:
         def _(p):
             return os.path.join(base_path, p)
 
+        def _get_prefix_code():
+            """
+            drpy2.js的注入前置文本
+            @return:
+            """
+            return """
+            cheerio.jinja2 = function (template, obj) {
+                return jinja.render(template, obj);
+            };
+            """.strip() + '\n'
+
         with open(_('qjs_module_muban.js'), encoding='utf-8') as f:
             _qjs_module_muban = f.read()
         with open(_('qjs_module_cheerio.js'), encoding='utf-8') as f:
             _qjs_module_cheerio = f.read()
-        # with open(_('qjs_module_jinja2.js'), encoding='utf-8') as f:
-        #     _qjs_module_jinja2 = f.read()
+        with open(_('qjs_module_jinja2.js'), encoding='utf-8') as f:
+            _qjs_module_jinja2 = f.read()
         with open(_('qjs_module_gbk.js'), encoding='utf-8') as f:
             _qjs_module_gbk = f.read()
         with open(_('qjs_module_crypto.js'), encoding='utf-8') as f:
@@ -54,7 +65,7 @@ class Drpy:
         with open(_('qjs_module_pako.js'), encoding='utf-8') as f:
             _qjs_module_pako = f.read()
         with open(_('qjs_module_drpy2.js'), encoding='utf-8') as f:
-            _qjs_module_drpy2 = f.read() + f'\nglobalThis.{self.key} = ' + """
+            _qjs_module_drpy2 = _get_prefix_code() + f.read() + f'\nglobalThis.{self.key} = ' + """
             { getRule,runMain, init, home, homeVod, category, detail,play, search, proxy, sniffer, isVideo, fixAdM3u8Ai };
             """
 
@@ -63,7 +74,7 @@ class Drpy:
         ctx.add_callable('getProxy', lambda is_public: self.getProxyUrl(is_public))
         ctx.module(_qjs_module_muban)
         ctx.module(_qjs_module_cheerio)
-        # ctx.module(_qjs_module_jinja2)
+        ctx.module(_qjs_module_jinja2)
         ctx.module(_qjs_module_gbk)
         ctx.module(_qjs_module_crypto)
         ctx.module(_qjs_module_jsencrypt)

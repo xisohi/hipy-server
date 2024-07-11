@@ -64,7 +64,7 @@ if __name__ == '__main__':
     #             }
     #             """)
 
-    print(drpy.categoryContent('3', 1, True, {"年份": "&year=2023"}))
+    print(drpy.categoryContent('3', 1, True, {"年份": "&year=2024"}))
     # print(drpy.categoryContent('2', 1, False, {}))
     # print(drpy.detailContent("3$/detail/790.html"))
     # print(drpy.detailContent("https://nkvod.com/detail/185851.html"))
