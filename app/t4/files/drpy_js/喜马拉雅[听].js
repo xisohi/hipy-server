@@ -31,11 +31,28 @@ var rule = {
     二级: $js.toString(() => {
         let urls = [];
         let html = request(input);
+        let json = JSON.parse(html);
         // log(html);
-        let data = JSON.parse(html).data.list;
+        let data = json.data.list;
         data.forEach(it => {
             urls.push(it.title + '$' + it.playPathAacv164);
         });
+        let maxPageId = json.data.maxPageId;
+        if (typeof (batchFetch) === 'function' && maxPageId > 1) {
+            let reqUrls = [];
+            for (let j = 2; j <= maxPageId; j++) {
+                reqUrls.push({url: input.replace('pageId=1', 'pageId=' + j), option: {timeout: 5000}});
+            }
+            let rhtmls = batchFetch(reqUrls);
+            rhtmls.forEach((rhtml) => {
+                let rjson = JSON.parse(rhtml);
+                let rdata = rjson.data.list;
+                rdata.forEach(it => {
+                    urls.push(it.title + '$' + it.playPathAacv164);
+                });
+            });
+        }
+
         VOD = {
             vod_play_from: '球球啦',
             vod_play_url: urls.join('#')
