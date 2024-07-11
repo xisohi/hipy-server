@@ -1,4 +1,5 @@
 import cheerio from 'assets://js/lib/cheerio.min.js';
+import './jinja.js'
 import 'assets://js/lib/crypto-js.js';
 import './jsencrypt.js';
 import './node-rsa.js';
@@ -6,7 +7,6 @@ import './pako.min.js';
 // import JSEncrypt from './jsencrypt.js'; // 会导致壳子崩溃的
 import 模板 from './模板.js'
 import {gbkTool} from './gbk.js'
-import './jinja.js'
 
 cheerio.jinja2 = function (template, obj) {
     return jinja.render(template, obj);
