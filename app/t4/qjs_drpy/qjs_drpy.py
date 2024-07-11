@@ -41,6 +41,8 @@ class Drpy:
             _qjs_module_muban = f.read()
         with open(_('qjs_module_cheerio.js'), encoding='utf-8') as f:
             _qjs_module_cheerio = f.read()
+        # with open(_('qjs_module_jinja2.js'), encoding='utf-8') as f:
+        #     _qjs_module_jinja2 = f.read()
         with open(_('qjs_module_gbk.js'), encoding='utf-8') as f:
             _qjs_module_gbk = f.read()
         with open(_('qjs_module_crypto.js'), encoding='utf-8') as f:
@@ -61,6 +63,7 @@ class Drpy:
         ctx.add_callable('getProxy', lambda is_public: self.getProxyUrl(is_public))
         ctx.module(_qjs_module_muban)
         ctx.module(_qjs_module_cheerio)
+        # ctx.module(_qjs_module_jinja2)
         ctx.module(_qjs_module_gbk)
         ctx.module(_qjs_module_crypto)
         ctx.module(_qjs_module_jsencrypt)

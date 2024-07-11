@@ -37,7 +37,8 @@ if __name__ == '__main__':
     # with open('../files/drpy_js/最新4K.js', encoding='utf-8') as f:
     # with open('../files/drpy_js/分享短视频.js', encoding='utf-8') as f:
     # with open('../files/drpy_js/采集之王[合].js', encoding='utf-8') as f:
-    with open('../files/drpy_js/老白故事[听].js', encoding='utf-8') as f:
+    # with open('../files/drpy_js/老白故事[听].js', encoding='utf-8') as f:
+    with open('../files/drpy_js/PTT[优].js', encoding='utf-8') as f:
         # with open('../files/drpy_js/耐看.js', encoding='utf-8') as f:
         code = f.read()
     code = code.replace('$nmjx_url', 'http://127.0.0.1:5708/nm?all=&url=')
@@ -63,7 +64,7 @@ if __name__ == '__main__':
     #             }
     #             """)
 
-    # print(drpy.categoryContent('3', 1, False, {}))
+    print(drpy.categoryContent('3', 1, True, {"年份": "&year=2023"}))
     # print(drpy.categoryContent('2', 1, False, {}))
     # print(drpy.detailContent("3$/detail/790.html"))
     # print(drpy.detailContent("https://nkvod.com/detail/185851.html"))
@@ -80,4 +81,4 @@ if __name__ == '__main__':
     # print(drpy.playerContent("1", "magnet://https://001.pm/index.php/vod/play/id/118802/sid/1/nid/14.html", []))
     # print(drpy.playerContent("1", "https://001.pm/index.php/vod/play/id/118802/sid/1/nid/14.html", []))
     # print(drpy.playerContent("1", "https://www.1080.ee/vodplay/124404-2-5.html", []))
-    print(drpy.playerContent("1", "40948-1", []))
+    # print(drpy.playerContent("1", "40948-1", []))
