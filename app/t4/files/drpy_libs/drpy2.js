@@ -8,8 +8,14 @@ import './pako.min.js';
 import 模板 from './模板.js'
 import {gbkTool} from './gbk.js'
 
+const _jinja2 = cheerio.jinja2;
 cheerio.jinja2 = function (template, obj) {
-    return jinja.render(template, obj);
+    try {
+        return jinja.render(template, obj);
+    } catch (e) {
+        console.log('新的jinja2库渲染失败,换回原始cheerio:' + e.message);
+        return _jinja2(template, obj)
+    }
 };
 // import cheerio from "https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/cheerio.min.js";
 // import "https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/crypto-js.js";
@@ -17,6 +23,8 @@ cheerio.jinja2 = function (template, obj) {
 // import {gbkTool} from 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/gbk.js'
 
 function init_test() {
+    console.log(typeof (jinja));
+    console.log(typeof (jinja.render));
     // console.log(typeof(CryptoJS));
     console.log("init_test_start");
     // print(模板);
