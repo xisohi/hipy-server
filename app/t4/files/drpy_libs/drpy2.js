@@ -24,8 +24,6 @@ cheerio.jinja2 = function (template, obj) {
 // import {gbkTool} from 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/gbk.js'
 
 function init_test() {
-    console.log(typeof (jinja));
-    console.log(typeof (jinja.render));
     // console.log(typeof(CryptoJS));
     console.log("init_test_start");
     // print(模板);
