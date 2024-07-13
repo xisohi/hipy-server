@@ -16,6 +16,7 @@
 [gpt-4o写筛选](https://www.coze.com/s/Zs8MqmrBF/)  
 [写源简述](./写源简述.md)  
 [未来计划](./未来计划.md)  
+[BOX待修bug描述](./box_bug/bug描述.md)  
 
 #### zy佬一键部署
 ```shell
