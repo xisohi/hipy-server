@@ -21,7 +21,7 @@
  * 客户端长期Cookie设置教程:
  * 抓包哔哩手机端搜索access_key,取任意链接里的access_key和appkey在drpy环境变量中增加同名的环境变量即可
  * 此时哔哩.js这个解析可用于此源的解析线路用
- * 传参 ?render=1&type=url&params=../json/小学教育.json@哔哩教育[官]
+ * 传参 ?render=1&type=url&params=../json/哔哩教育.json@哔哩教育[官]
  * 传参 ?render=1&type=url&params=../json/哔哩大全.json@哔哩大全[官]
  */
 var rule = {
@@ -32,7 +32,7 @@ var rule = {
     url: '/x/web-interface/search/type?search_type=video&fyfilter',
     filter_url: 'keyword=fyclass{{fl.tid}}&page=fypage&duration={{fl.duration}}&order={{fl.order}}',
     class_parse: $js.toString(() => {
-        // let html = request('{{host}}/files/json/小学教育.json');
+        // let html = request('{{host}}/files/json/哔哩教育.json');
         log('rule.params:' + rule.params);
         let html = request(rule.params);
         let json = dealJson(html);
@@ -45,7 +45,7 @@ var rule = {
     searchUrl: '/x/web-interface/search/type?search_type=video&keyword=**&page=fypage',
     searchable: 2,
     quickSearch: 0,
-    // params: '?render=1&type=url&params=../json/小学教育.json@哔哩教育[官]',
+    // params: '?render=1&type=url&params=../json/哔哩教育.json@哔哩教育[官]',
     // params: '?render=1&type=url&params=../json/哔哩大全.json@哔哩大全[官]',
     headers: {
         "User-Agent": "PC_UA",
