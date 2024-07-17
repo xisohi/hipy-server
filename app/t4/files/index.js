@@ -156,8 +156,11 @@ async function main() {
     js_files.forEach((it, index) => {
         let rname = it.replace('.js', '');
         let extras = [''];
-        if (rname.includes('我的哔哩传参')) {
-            extras = ['?type=url&params=../json/小学教育.json'];
+        if (rname.includes('我的哔哩[官]')) {
+            extras = [
+                '?type=url&params=../json/小学教育.json@哔哩教育[官]',
+                '?type=url&params=../json/哔哩大全.json@哔哩大全[官]',
+            ];
         } else if (rname.includes('采集之王')) {
             extras = [
                 '?type=url&params=../json/采集静态.json$1@采王道长[合]',
