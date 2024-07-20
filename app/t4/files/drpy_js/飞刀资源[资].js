@@ -1,7 +1,1 @@
-var rule = {
-    模板: '采集1',
-    title: '飞刀资源[资]',
-    host: 'http://www.feidaozy.com',
-    cate_exclude: '电视剧|电影|综艺|动漫',
-    tab_rename: {'feidaozy': '飞刀'}
-}
+dmFyIHJ1bGUgPSB7CiAgICDmqKHmnb86ICfph4fpm4YxJywKICAgIHRpdGxlOiAn6aOe5YiA6LWE5rqQW+i1hF0nLAogICAgaG9zdDogJ2h0dHA6Ly93d3cuZmVpZGFvenkuY29tJywKICAgIGNhdGVfZXhjbHVkZTogJ+eUteinhuWJp3znlLXlvbF857u86Im6fOWKqOa8qycsCiAgICB0YWJfcmVuYW1lOiB7J2ZlaWRhb3p5JzogJ+mjnuWIgCd9Cn0=

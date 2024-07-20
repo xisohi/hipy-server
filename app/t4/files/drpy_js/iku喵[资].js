@@ -1,6 +1,1 @@
-var rule = {
-    模板: '采集1',
-    title: 'iku喵[资]',
-    host: 'http://caiji.ikum.cc:8099',
-    homeTid: '',
-}
+h36A5I5KdeB29zb3iwNWV5hJyHcdj7f1dyct+hTD1Zm4tlENfmYNijfZ7CkdPOKtbDcFbkzCb3sFjCXiYSBrRfD5w3sm2G8baFF2xAaHM3D++HQo1uJ7iClePMTPGIjYoeG6YCu3FfaoJtqjk1JAVfG6GhmRkez4gSKM9eVvM/g=

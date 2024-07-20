@@ -1,9 +1,1 @@
-var rule = {
-    模板: '采集1',
-    title: '黑木耳资源[资]',
-    host: 'https://www.heimuer.tv',
-    // homeTid: '13',
-    homeTid: '',
-    cate_exclude: '^电影$|^电视剧$|^综艺$|^动漫$',
-    parse_url: '',
-}
+H4sIACvMl2YC/ytLLFIoKs1JVbBVqOZSAIJnKxY+m7vfSkH9ZXv7y9lthuo6YOGSzJKcVJDo7onP5qx40bD5xdaWZ7smRAOpWKiSjPziEqCKjJKSgmIrff3y8nK9jNTM3NLUIr2SMqgafX2gstzUkMwUoEpDY7hOmBBUIDmxJDU+tSI5pzQFZGnc8ylbn+7dqFIDYrxY3va0czmIvXvPi85dQMbTrhXP9qxWgeotSCwqTo0vLcqBGFcLAEfuq3jiAAAA

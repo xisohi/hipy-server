@@ -1,12 +1,1 @@
-Object.assign(muban.mxpro.二级, {
-    tab_text: 'div--small&&Text',
-});
-var rule = {
-    模板: 'mxpro',
-    title: '剧迷',
-    host: 'https://www.jagcys.com/',
-    url: '/vodshow/fyclass/page/fypage.html',
-    searchUrl: '/vodsearch**/page/fypage.html',
-    class_parse: '.navbar-items&&li:gt(1):lt(8);a&&Text;a&&href;/vodtype/(.*?)\.html',
-    cate_exclude: '今日更新|热榜',
-}
+T2JqZWN0LmFzc2lnbihtdWJhbi5teHByby7kuoznuqcsIHsKICAgIHRhYl90ZXh0OiAnZGl2LS1zbWFsbCYmVGV4dCcsCn0pOwp2YXIgcnVsZSA9IHsKICAgIOaooeadvzogJ214cHJvJywKICAgIHRpdGxlOiAn5Ymn6L+3JywKICAgIGhvc3Q6ICdodHRwczovL3d3dy5qYWdjeXMuY29tLycsCiAgICB1cmw6ICcvdm9kc2hvdy9meWNsYXNzL3BhZ2UvZnlwYWdlLmh0bWwnLAogICAgc2VhcmNoVXJsOiAnL3ZvZHNlYXJjaCoqL3BhZ2UvZnlwYWdlLmh0bWwnLAogICAgY2xhc3NfcGFyc2U6ICcubmF2YmFyLWl0ZW1zJiZsaTpndCgxKTpsdCg4KTthJiZUZXh0O2EmJmhyZWY7L3ZvZHR5cGUvKC4qPylcLmh0bWwnLAogICAgY2F0ZV9leGNsdWRlOiAn5LuK5pel5pu05pawfOeDreamnCcsCn0=

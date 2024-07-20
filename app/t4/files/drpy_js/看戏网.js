@@ -1,11 +1,1 @@
-Object.assign(muban.首图2.二级, {
-    tabs: '.stui-pannel_hd h3',
-});
-var rule = {
-    模板: '首图2',
-    title: '看戏网',
-    host: 'https://www.tv262.com',
-    url: '/vodshow/fyclass--------fypage---.html',
-    searchUrl: 'vodsearch/**----------fypage---.html',
-    cate_exclude: '专题',
-}
+H4sIACvMl2YC//NPykpNLtFLLC7OTM/TyC1NSszTe7ls2tPZ+4z0nuzqeb5ruY5CNZcCEJQkJhVbKajrFZeUZuoWJOblpebEZ6QoZBir63DValpzlSUWKRSV5qQq2EI1PFux8Nnc/UAtUPOA6sDmZJbkpAJFn8/pftbR/3zvRKh4Rn5xCVA4o6SkoNhKX7+8vFyvpMzIzEgvOT8XqqS0KAeoQr8sP6U4I79cP60yOQfocF0oSKssSExPBTL0Mkpyc6BailMTi5IzQsEaQfrAXH0tLV1dvNqSE0tS41MrknNKU0BufbJj8stFM0AeBQCeu44dMAEAAA==

@@ -1,7 +1,1 @@
-var rule = {
-    模板: 'mxone5',
-    title: '奶狗影视[慢]',
-    host: 'https://ds.naigou88.top/',
-    url: '/index.php/vod/type/id/fyclass/page/fypage.html',
-    searchUrl: '/index.php/vod/search/page/fypage/wd/**.html',
-}
+H4sIACvMl2YC/ytLLFIoKs1JVbBVqOZSAIJnKxY+m7vfSkE9tyI/L9VUXQcsWpJZkpMKFHy6dNvz7ulP9258sbwt+lnroliofEZ+cQlQOqOkpKDYSl8/pVgvLzEzPb/UwkKvJL9AH6qqtCgHqEg/My8ltUKvIKNAvyw/Rb+ksiBVPzNFP60yOSexuFi/IDE9FcgBUXoZJbk5UL3FqYlFyRmh2EyASCFr1C9P0dfSgmmvBQCRGRRL5QAAAA==

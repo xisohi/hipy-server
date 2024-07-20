@@ -1,13 +1,1 @@
-var rule = {
-    模板: '自动',
-    模板修改: $js.toString(() => {
-        Object.assign(muban.自动.二级, {
-            tabs: '#y-playList&&.tab-item',
-        });
-    }),
-    title: '易点看影院[自动]',
-    host: 'http://www.edktv.com',
-    url: '/vodshow_fyclass--------fypage---.html',
-    class_parse: '.navbar-items&&li;a&&Text;a&&href;/type_(.*?).html',
-    searchUrl: '/vodsearch_**----------fypage---.html',
-}
+h36A5I5KdeB29zb3iwNWV1EAw0AReVKkvtcVRvGmIbZzDg8fILMl0vZ8u3wxnVnVFLuge1fDnKox3Bpf+R/0y+4eQR1I+eY/1NAIxa8aqSP+8+6paF4AFx4xUlB8kYStvfMHeUWF5Zp9hnLkr61H6DaApMB3Zq4AXm6hysszUVhe6U/Pwc159grtgxI2nAV4tqmGZKacgyh7MpIJkEuoi+q/p1VjSsZRKRDU0j0IwVeiw82+k6P+epi8qghG9JeRp4kBtiXd8NlkQMuofmQi3Szid9VG1l8ewHOWGt/y0/Z7MeKNVbOnq8aJojMf0m4e0VbmAMm23orKFxsqvZjj79d2wyyYWL8POg+rF2oUAAhlquH9u43vMh1ibvfVNyCe+wj87XQE+AsrM0YKH52utMZN//9GL8RcYcjZkM+4oYjt68yJfPEiJ4t/XEpJb2YAm2aoAzJFSlR9anoGLTl22ByScl/xDKx/cXTidWtX/F9B+530mTra465voeq+gNR6L3SdGOxK5oQHYUMuNlMqohbL3WaHg2b6B4sdBHhC4ahsqAOgzmcNmDrsWQ4GJgpdiSqkx1qVYVR6hdL5aXyciQ==

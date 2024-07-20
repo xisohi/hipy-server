@@ -1,5 +1,1 @@
-var rule = {
-    模板: '采集1',
-    title: '茶语资源[资]',
-    host: 'http://www.clcaiji.com:1001',
-}
+H4sIACvMl2YC/ytLLFIoKs1JVbBVqOZSAIJnKxY+m7vfSkH9ZXv7y9lthuo6YOGSzJKcVKDoi55tL9avfbG15dmuCdFAKhYqn5FfXAKUzigpKbDS1y8vL9dLzklOzMzK1EvOz7UyNDAAGVQLAI1O7WRuAAAA

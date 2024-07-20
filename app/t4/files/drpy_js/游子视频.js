@@ -1,7 +1,1 @@
-var rule = {
-    title: '游子视频',
-    模板: '海螺3',
-    host: 'https://www.youzisp.tv',
-    searchUrl: '/vodsearch/**----------fypage---.html',
-    url: '/vodshow/fyclass--------fypage---.html',
-}
+H4sIACvMl2YC/ytLLFIoKs1JVbBVqOZSAIKSzJKcVCsF9Wc7djxdO+HF8raXiyaq64Clnq1Y+GzufpDc1u0v5u0yhgpn5BeXAAUzSkoKiq309cvLy/Uq80urMosL9ErKoGqKUxOLkjNCi3KACvXL8lMgfH0tLV04SKssSExPBTL0Mkpyc6D6ShE6MvLL9dMqk3MSi4txaqkFABZoMo3PAAAA
