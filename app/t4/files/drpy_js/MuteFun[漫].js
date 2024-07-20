@@ -1,6 +1,1 @@
-var rule = {
-    模板: 'mxpro',
-    title: 'MuteFun[漫]',
-    host: 'https://www.mutedm.com/',
-    class_parse: '.navbar-items li;a&&Text;a&&href;/(\\d+).html',
-}
+h36A5I5KdeB29zb3iwNWV2y7g637nkMoiC8thhxc2MS078+tjm+tO7ywY7mEFrlVKNlQtgUpfOEHyMGPt64RcoLEoRuC2OLssjmYHwVnsi6JS7j9so6bRF6nF+cS7o9tsYd1iSlp9zZP3nNy0RCCxi/0g82GQO3skXdEY7ECGvBCCtSBQn8jqJnMVUbEzbnRvenIR1CR8416pPLyB6Ar6QE9JjNClAlnVFUq4mB1kxc=

@@ -1,15 +1,1 @@
-var rule = {
-    模板: '海螺3',
-    title: '宝片视频',
-    host: 'https://ibaopian.pro',
-    searchUrl: '/vod/search/page/fypage/wd/**.html',
-    url: '/vod/show/id/fyclass/page/fypage.html',
-    二级: {
-        title: '.hl-dc-title&&Text;.hl-dc-content&&li:eq(6)&&Text',
-        img: '.hl-lazy&&data-original',
-        desc: '.hl-dc-content&&li:eq(10)&&Text;.hl-dc-content&&li:eq(4)&&Text;.hl-dc-content&&li:eq(5)&&Text;.hl-dc-content&&li:eq(2)&&Text;.hl-dc-content&&li:eq(3)&&Text',
-        content: '.hl-content-text&&Text',
-        tabs: '.hl-tabs&&a',
-        lists: '.hl-plays-list:eq(#id)&&li',
-    },
-}
+dmFyIHJ1bGUgPSB7CiAgICDmqKHmnb86ICfmtbfonrozJywKICAgIHRpdGxlOiAn5a6d54mH6KeG6aKRJywKICAgIGhvc3Q6ICdodHRwczovL2liYW9waWFuLnBybycsCiAgICBzZWFyY2hVcmw6ICcvdm9kL3NlYXJjaC9wYWdlL2Z5cGFnZS93ZC8qKi5odG1sJywKICAgIHVybDogJy92b2Qvc2hvdy9pZC9meWNsYXNzL3BhZ2UvZnlwYWdlLmh0bWwnLAogICAg5LqM57qnOiB7CiAgICAgICAgdGl0bGU6ICcuaGwtZGMtdGl0bGUmJlRleHQ7LmhsLWRjLWNvbnRlbnQmJmxpOmVxKDYpJiZUZXh0JywKICAgICAgICBpbWc6ICcuaGwtbGF6eSYmZGF0YS1vcmlnaW5hbCcsCiAgICAgICAgZGVzYzogJy5obC1kYy1jb250ZW50JiZsaTplcSgxMCkmJlRleHQ7LmhsLWRjLWNvbnRlbnQmJmxpOmVxKDQpJiZUZXh0Oy5obC1kYy1jb250ZW50JiZsaTplcSg1KSYmVGV4dDsuaGwtZGMtY29udGVudCYmbGk6ZXEoMikmJlRleHQ7LmhsLWRjLWNvbnRlbnQmJmxpOmVxKDMpJiZUZXh0JywKICAgICAgICBjb250ZW50OiAnLmhsLWNvbnRlbnQtdGV4dCYmVGV4dCcsCiAgICAgICAgdGFiczogJy5obC10YWJzJiZhJywKICAgICAgICBsaXN0czogJy5obC1wbGF5cy1saXN0OmVxKCNpZCkmJmxpJywKICAgIH0sCn0=

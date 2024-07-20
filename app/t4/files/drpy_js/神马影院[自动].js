@@ -1,9 +1,1 @@
-var rule = {
-    模板: '自动',
-    title: '神马影院[自动]',
-    host: 'http://biso.cc',
-    url: '/show/fyclass--------fypage---.html',
-    class_parse: '.grid-items&&li:lt(7);a&&Text;a&&href;.*/(.*?).html',
-    searchUrl: '/search/**----------fypage---.html',
-    搜索: '.module-items .module-search-item;h3&&a&&Text;img&&data-src;.video-serial&&Text;h3&&a&&href',
-}
+dmFyIHJ1bGUgPSB7CiAgICDmqKHmnb86ICfoh6rliqgnLAogICAgdGl0bGU6ICfnpZ7pqazlvbHpmaJb6Ieq5YqoXScsCiAgICBob3N0OiAnaHR0cDovL2Jpc28uY2MnLAogICAgdXJsOiAnL3Nob3cvZnljbGFzcy0tLS0tLS0tZnlwYWdlLS0tLmh0bWwnLAogICAgY2xhc3NfcGFyc2U6ICcuZ3JpZC1pdGVtcyYmbGk6bHQoNyk7YSYmVGV4dDthJiZocmVmOy4qLyguKj8pLmh0bWwnLAogICAgc2VhcmNoVXJsOiAnL3NlYXJjaC8qKi0tLS0tLS0tLS1meXBhZ2UtLS0uaHRtbCcsCiAgICDmkJzntKI6ICcubW9kdWxlLWl0ZW1zIC5tb2R1bGUtc2VhcmNoLWl0ZW07aDMmJmEmJlRleHQ7aW1nJiZkYXRhLXNyYzsudmlkZW8tc2VyaWFsJiZUZXh0O2gzJiZhJiZocmVmJywKfQ==

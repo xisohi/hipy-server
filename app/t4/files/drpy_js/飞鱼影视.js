@@ -1,16 +1,1 @@
-Object.assign(muban.mx.二级, {
-    重定向: $js.toString(() => {
-        log('执行重定向:' + MY_URL);
-        // let html = request(MY_URL);
-        MY_URL = pd(html, '.playbtn&&a&&href', MY_URL);
-        log('二级重定向到:' + MY_URL);
-        html = request(MY_URL);
-    }),
-});
-var rule = {
-    模板: 'mx',
-    title: '飞鱼影视',
-    host: 'https://www.kufeiyu.com',
-    class_parse: '.top_nav li;a&&Text;a&&href;/(\\d+).html',
-    url: '/list/fyclass-fypage.html',
-}
+H4sIACvMl2YC/32Ry0rDQBSG932KWUgyoXGyb6hPoAheFkKhTNvJpU4uzpy0DdKtF6igW0GhuIgrsdui+DKmtm/hpI11UfGshnO+//D/Z/ZbXdYGQqX03RAHSYuGJBiQz+noa5qZ6LyCVC0ub/KX+/z2roa2upJAdAjCD12MDVTfKZmieORifXadzcejX4mOqmjvpHl8sGvYa9KyEGeAPAg4qiPBzhImAW9gq4Yi4g4uWBPpJOY0bUGoaVTTPMEc3dxcvzSyyrA2kl+9/u3lPxNDw6wM1btHBRIJZ4pbxZ09j2cPHzWkBwPdXHbAB85UY/H0uJi85e+TeXZRjrxIgpp4ALGsWVa/3yenicP8NCHtKCihNlef0IypkMUWdeS4GdIe4r6tgh6xAdhlYNvCjUanapDCeClOBFcii/sSLCddrtp20pi67IcafgORdGcC6gEAAA==

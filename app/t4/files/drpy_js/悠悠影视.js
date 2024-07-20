@@ -1,12 +1,1 @@
-Object.assign(muban.mxpro.二级, {
-    tab_text: 'div--small&&Text',
-});
-var rule = {
-    模板: 'mxpro',
-    title: '悠悠影视',
-    host: 'https://www.xiyuzhubao.com',
-    url: '/vodshow/fyclass/page/fypage.html',
-    searchUrl: '/vodsearch**/page/fypage.html',
-    cate_exclude: '今日更新',
-    class_parse: '.navbar-items li:gt(0):lt(9);a&&Text;a&&href;.*/(.*?).html',
-}
+qz2VfkB3O9fqiff5MjJa/ASdotKRYPNu8cLtwdABO3MDeyNp8SITwKEVrcmMRsD6s0DQiKXK91uXHy81Bhzh8xPZzDl/A9cOXQrBxH+Qn2Zl2eNL3Ogzx+kAqZMq7TDGW7Ndfho+4VAcQyAx6N07mCoWABjb/F5taTYsube1oMAWTBd2crn9Z8cJfHAwXlGsr8uJkgFxV8sPyiNAsiITfoJwzcu6w1bcnMXKwPAFNgh6Wrr6rvYwNvbN+T/uQGy/DlJic4Vvfux5mltEKCSbmqP/BvTl8C5jV13G8UDeysNXuuk4XuzNAz9CKTYPWDl1i4KuweqbTsMS7jtgoeAJcNiC7g+u1vb0/O/z66gp4KJ3qSWiK0AcjDBsiSRzHc9j6mgEw1KlADUJjs05ybPlXzvP5ei/Diw1RQpoliQ6ovgEBPZ67Kq7zF9JzMK8yrJa2xwq6uQ7JVKY/aTQrs6/fNiJkiLwTbDCXeYbOVRBCf+R8/T0rPTOb2QJVObpDUFN

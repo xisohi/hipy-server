@@ -1,11 +1,1 @@
-Object.assign(muban.mxpro.二级, {
-    tab_text: 'div--small&&Text',
-});
-var rule = {
-    模板: 'mxpro',
-    title: '刺猬影视',
-    host: 'https://ys.cwss.xyz/',
-    url: '/index.php/vod/show/id/fyclass/page/fypage.html',
-    searchUrl: '/index.php/vod/search/page/fypage/wd/**.html',
-    class_parse: '.navbar-items li:gt(0):lt(8);a&&Text;a&&href;/(\\d+).html',
-}
+qz2VfkB3O9fqiff5MjJa/ASdotKRYPNu8cLtwdABO3MDeyNp8SITwKEVrcmMRsD6s0DQiKXK91uXHy81Bhzh8xPZzDl/A9cOXQrBxH+Qn2Zl2eNL3Ogzx+kAqZMq7TDGW7Ndfho+4VAcQyAx6N07mCjkjrvmOaQhINUdR8xk8KUKSpftD7oogyPBQYPiaCXXecU0UD06iMsoLjBWBunWAK3R2aBeZBvleqJ84EHy1dDVHzacAE+23u9shftbMgX+eh4CYMWZhyekxjzsys9Pc2n1GoAjTMX4hoxD0NeB/BeShe/MN7R9m2qBmqpk12rIlP5ge4emZ7HHhojmsxIait+7VBKi6IBVnhH05IYrBreB7TP6RYkwr/XPKPfF81dZS7083m6acZorS1YPrLljnc2A2g8P7Fz5xNDwIljjgsIxKat3V2ycgTIYhN10tAbqJLPebES+4tFlQE0W0FO/3HgDnNxwIiu3tYzW228k9fnltLEm15Kb3cAuegONEMyb

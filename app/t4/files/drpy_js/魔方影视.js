@@ -1,11 +1,1 @@
-Object.assign(muban.mxpro.二级, {
-    tab_text: 'div--small&&Text',
-});
-var rule = {
-    模板: 'mxpro',
-    title: '魔方影视',
-    host: 'https://mfys.vip/',
-    url: '/vodshow/fyclass--------fypage---/',
-    searchUrl: '/vodsearch/**----------fypage---/',
-    class_parse: '.navbar-items li:gt(0):lt(8);a&&Text;a&&href;.*/(\\d+)',
-}
+H4sIACvMl2YC/3VQPU/DMBDd8ys8tUla24woEb+BBbZK1SVxEldOYtmOaYRYmRgRGwNTWRgYqYT4MxDgX+CkQUzcch/v3tO7O002LDUEtOZF7VdtAjWptlI15H1/87nfLdGlh1wYSNaGbU2E5hm3GOsKhJjNztxovvSugtizoJBqBUMnE6V/fOjv3xxh1HNbow43grnZ99Ntf/fy8fr8tbueoLLRg3xpjNQRpVXeaWK5pBPcKuFQaptMl80FzbtUONd4iryTUDBX/K5rBiotz/9IY0/DEON/OaPiWoLSg0VSg01AYW5YpZHgUWH8oyASxj8OYjjcPuRSsTwmIfVXq2wRDN/4AbXHPcNVAQAA

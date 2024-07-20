@@ -1,8 +1,1 @@
-var rule = {
-    模板: '首图',
-    title: '饺子影院',
-    host: 'https://www.jiaozi.me',
-    url: '/mlist/fyclass-fypage.html',
-    searchUrl: '/search.php?page=fypage&searchword=**&searchtype=',
-    class_parse: '.myui-header__menu&&li:gt(0):lt(5);a&&Text;a&&href;.*/(.*?).html',
-}
+dmFyIHJ1bGUgPSB7CiAgIOaooeadvzogJ+mmluWbvicsCiAgIHRpdGxlOiAn6aW65a2Q5b2x6ZmiJywKICAgaG9zdDogJ2h0dHBzOi8vd3d3LmppYW96aS5tZScsCiAgIHVybDogJy9tbGlzdC9pbmRleGZ5Y2xhc3MtZnlwYWdlLmh0bWwnLAogICBzZWFyY2hVcmw6ICcvc2VhcmNoLnBocD9wYWdlPWZ5cGFnZSZzZWFyY2h3b3JkPSoqJnNlYXJjaHR5cGU9JywKICAgY2xhc3NfcGFyc2U6ICcubXl1aS1oZWFkZXJfX21lbnUgbGk7YSYmVGV4dDthJiZocmVmO2luZGV4KFxcZCspXC5odG1sJywKICAgbGF6eTogYGAsCn0=

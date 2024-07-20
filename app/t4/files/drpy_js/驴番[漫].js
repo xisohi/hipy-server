@@ -1,12 +1,1 @@
-Object.assign(muban.mxpro.二级, {
-    tab_text: 'div--small&&Text',
-});
-var rule = {
-    模板: 'mxpro',
-    title: '驴番[漫]',
-    host: 'https://www.lvfan.fun',
-    url: 'vodshow/fyclass--------fypage---/',
-    class_parse: '.navbar-items li;a&&Text;a&&href;.*/(\\d+)/',
-    searchUrl: '/vodsearch/**----------fypage---/',
-    tab_exclude: '排序',
-}
+H4sIACvMl2YC/3VQO07EMBDtcwpX+8mu7X4jzkADFYtWk8RZGzkf2Y6TFeIGCCQkSgoqfi1VhMRlICtugZ0NJdPYM/N+muP4giWGgNZiW8zyOoaC5G2lSvLVXe+7pyW6DJArA/HGsNas0DQVFmOdg5STyYkbTZfB1TwKLCikasnQ0Ujpnx/7h09HGPQcatARRjI3+3l539+/nvUfb+fjhpfaq3NjKr2itGkaIm3m4mR1MUJqJR3ClqnmZUOzXSJdbjxWtqtgy9yHjuhhu6lAaW9ICrAxKCwMyzWSIoJDev9yxbKIhHS2XqeL+R9fM1AJPx08qTcdehqGGP/r6c/E2kTWqffsb+6+u1t/n1+6rAuNZwEAAA==

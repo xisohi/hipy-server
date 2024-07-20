@@ -1,14 +1,1 @@
-var rule = {
-    模板: '自动',
-    模板修改: $js.toString(() => {
-        Object.assign(muban.自动.二级, {
-            tab_text: 'div--small&&Text',
-        });
-    }),
-    title: '剧圈圈[自动]',
-    host: 'https://www.jqqzx.cc/',
-    url: '/vodshow/id/fyclass/page/fypage.html',
-    searchUrl: '/vodsearch**/page/fypage.html',
-    class_parse: '.navbar-items li:gt(1):lt(8);a&&Text;a&&href;.*/(.*?)\.html',
-    cate_exclude: '今日更新|热榜',
-}
+dmFyIHJ1bGUgPSB7CiAgICDmqKHmnb86ICfoh6rliqgnLAogICAg5qih5p2/5L+u5pS5OiAkanMudG9TdHJpbmcoKCkgPT4gewogICAgICAgIE9iamVjdC5hc3NpZ24obXViYW4u6Ieq5YqoLuS6jOe6pywgewogICAgICAgICAgICB0YWJfdGV4dDogJ2Rpdi0tc21hbGwmJlRleHQnLAogICAgICAgIH0pOwogICAgfSksCiAgICB0aXRsZTogJ+WJp+WciOWciFvoh6rliqhdJywKICAgIGhvc3Q6ICdodHRwczovL3d3dy5qcXF6eC5jYy8nLAogICAgdXJsOiAnL3ZvZHNob3cvaWQvZnljbGFzcy9wYWdlL2Z5cGFnZS5odG1sJywKICAgIHNlYXJjaFVybDogJy92b2RzZWFyY2gqKi9wYWdlL2Z5cGFnZS5odG1sJywKICAgIGNsYXNzX3BhcnNlOiAnLm5hdmJhci1pdGVtcyBsaTpndCgxKTpsdCg4KTthJiZUZXh0O2EmJmhyZWY7LiovKC4qPylcLmh0bWwnLAogICAgY2F0ZV9leGNsdWRlOiAn5LuK5pel5pu05pawfOeDreamnCcsCn0=

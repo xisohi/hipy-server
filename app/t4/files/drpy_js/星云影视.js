@@ -1,11 +1,1 @@
-Object.assign(muban.首图2.二级, {
-    tabs: '.stui-pannel__head h3',
-});
-var rule = {
-    模板: '首图2',
-    title: '星云影视',
-    host: 'https://www.szxmdjj.com',
-    url: '/vodshow/fyclass--------fypage---.html',
-    searchUrl: '/vodsearch/**----------fypage---.html',
-    tab_exclude: '剧情简介|猜你喜欢|影片评论|榜单',
-}
+qz2VfkB3O9fqiff5MjJa/NOxIkzNuMv7K54K23vKJOSw++yJ8kLPZGH7bSG3+EXPt4QIAb8pNoprEt1UZ1T/V4W/sp4A5sfUtLeuACMYWQe1KwhJN9KGVLad9F06m3DJf4UKGy2nF6D8SlobdUjU7SuGIIdN1MaCwSVxnbW14ZK5QtqicNMWCNSWuq9hgBaxUqyLjWUtaBZKY0laLqhrXuuA8LLMxYysxQi2FTaJoK6pm8ECQtvG7NgmE/62j2FGTXnb+f574ISQPof8eBUmsa6qCWFuMV4GOmC/l2I8t0aX5PPdpQ/56tTOZL0EnsvjeqfXAxAKnPgHjVuAQsHa/vL41DguETMScSWq8ymMm6/480y9afY9zkDwk9wknXWfm5ifUDpYaGSr3qJAzoFKC0n0XmPcVkWj+d2J1iwkJSjEYMU2aFSxb30+LAo8LKDVXYTDdG+rHvh/qBy92266Hw==

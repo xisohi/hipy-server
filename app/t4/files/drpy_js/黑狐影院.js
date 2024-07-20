@@ -1,10 +1,1 @@
-Object.assign(muban.首图2.二级, {
-    tabs: ".nav.nav-tabs&&li",
-});
-var rule = {
-    模板: '首图2',
-    title: '黑狐影院',
-    host: 'http://fagmn.com',
-    url: '/list/fyclass_fypage.html',
-    searchUrl: '/search.php#searchword=**;post',
-}
+qz2VfkB3O9fqiff5MjJa/NOxIkzNuMv7K54K23vKJOSw++yJ8kLPZGH7bSG3+EXPZ1ZxpDiw+Y/hnLXhjkYrol4wPNMVOaHlSfos84fjU8M3kwee+55NEqqhXAUEj+olcSokm1FpMB31qa+ZYmv3X5Lo427o9ac16YJoItf2xxJrpiMGFX/K9RLoNC42xaYzBJrt9n2jIEZ1mejIDmq9oVrhjvynYeuA5rFwfcnNnKJAnL/F+u8tevTK21AZmT/Oa0O+s3qTOx7W9jQykPvhlA5xmUOzRv2n9PJovgX91Q15FeGH2yq71L9c8jKSFypXjSe4LxL0R00Z2zz9fUjSpg==
