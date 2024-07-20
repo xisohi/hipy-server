@@ -1,5 +1,5 @@
 var rule = {
-    title: '种子音乐',
+    title: '种子音乐[听]',
     host: 'https://www.zz123.com',
     homeUrl: '/list/mszm.htm?page=1',
     url: '/fyclass.htm?page=fypage',
