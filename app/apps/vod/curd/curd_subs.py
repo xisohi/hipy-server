@@ -15,6 +15,12 @@ from sqlalchemy import asc, desc, func, exists
 
 class CURDVodSubs(CRUDBase):
 
+    def dataCount(self, db: Session) -> dict:
+        data = super().dataCount(db)
+        data_active_count = db.query(self.model).filter(self.model.is_deleted == 0, self.model.status == 1).count()
+        data.update({'data_active_count': data_active_count})
+        return data
+
     def create(self, db: Session, *, obj_in, creator_id: int = 0):
         return super().create(db, obj_in=obj_in, creator_id=creator_id)
 

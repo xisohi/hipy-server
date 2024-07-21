@@ -175,3 +175,11 @@ class CRUDBase(Generic[ModelType, CreateSchemaType, UpdateSchemaType]):
         data = db.query(func.max(self.model.order_num).label('max_order_num')).filter(
             self.model.is_deleted == 0).first()
         return data['max_order_num'] or 0
+
+    def dataCount(self, db: Session) -> dict:
+        data_all_count = db.query(self.model).count()
+        data_active_count = db.query(self.model).filter(self.model.is_deleted == 0).count()
+        return {
+            'data_all_count': data_all_count,
+            'data_active_count': data_active_count,
+        }

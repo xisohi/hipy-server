@@ -104,6 +104,31 @@ async def blog():
     return RedirectResponse(settings.BLOG_URL)
 
 
+@router.get("/version", summary="版本及统计信息")
+async def version_info(*,
+                       db: Session = Depends(deps.get_db),
+                       r: asyncRedis = Depends(deps.get_redis),
+                       request: Req,
+                       ):
+    t1 = time()
+    user_count = curd_user.dataCount(db=db)
+    rule_count = curd_vod_rules.dataCount(db=db)
+    sub_count = curd_vod_subs.dataCount(db=db)
+    res = {
+        'count': {
+            'active_users': user_count['data_active_count'],
+            'total_users': user_count['data_all_count'],
+            'active_rules': rule_count['data_active_count'],
+            'total_rules': rule_count['data_all_count'],
+            'active_subs': sub_count['data_active_count'],
+            'total_subs': sub_count['data_all_count'],
+        },
+        'version': 'hipy-server 20240722 beta1',
+        'cost_time': get_interval(t1)
+    }
+    return respSuccessJson(res)
+
+
 # @router.get('/test')
 # async def api_test():
 #     """
