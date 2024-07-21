@@ -94,6 +94,11 @@ async def favicon():
     return FileResponse('static/img/favicon.ico')
 
 
+@router.get('/robots.txt', summary="网站禁止爬虫策略")  # 设置爬虫策略禁止搜索引擎收录
+async def robots():
+    return FileResponse('t4/files/txt/robots.txt')
+
+
 @router.get('/blog', summary="博客首页")
 async def blog():
     return RedirectResponse(settings.BLOG_URL)
@@ -204,7 +209,8 @@ async def hipy_configs(*,
     order_bys = [asc(curd_vod_rules.model.order_num)]
     hipy_rules = curd_vod_rules.search(db=db, status=1, group=groups['hipy'], file_type='.py', page=1, page_size=9999,
                                        order_bys=order_bys)
-    drpy_rules = curd_vod_rules.search(db=db, status=1, group=groups['drpy_js'], file_type='.js', page=1, page_size=9999,
+    drpy_rules = curd_vod_rules.search(db=db, status=1, group=groups['drpy_js'], file_type='.js', page=1,
+                                       page_size=9999,
                                        order_bys=order_bys)
     # print(hipy_rules.get('results')[0])
     hipy_rules = [{
