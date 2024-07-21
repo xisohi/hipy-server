@@ -17,8 +17,10 @@
 [写源简述](./写源简述.md)  
 [未来计划](./未来计划.md)  
 [BOX待修bug描述](./box_bug/bug描述.md)  
+[他人博客教程](https://www.soeasy.website/TVBox/hipy.html)
 
 #### zy佬一键部署
+
 ```shell
 bash -c "$(curl -fsSLk https://zy.catni.cn/release/latest/setup.sh)"
 ```
@@ -33,8 +35,6 @@ bash -c "$(curl -fsSLk https://zy.catni.cn/release/latest/setup.sh)"
 [alembic参考文档](https://zhuanlan.zhihu.com/p/306898869?utm_id=0)
 [playwright参考文档](https://playwright.dev/python/docs/api/class-playwright)  
 [zyplayer参考](https://wwi.lanzoup.com/iPbFb23bpdaf)
-
-
 
 ```shell
 alembic init alembic
@@ -138,6 +138,7 @@ sudo supervisorctl update     # 更新supervisor
 
 sudo supervisorctl start hipy-server:   # 启动项目
 ```
+
 ### github被墙无法提交代码的操作说明
 
 [看这篇文章就够了](https://raw.hellogithub.com/hosts)
@@ -147,6 +148,7 @@ sudo supervisorctl start hipy-server:   # 启动项目
 [道长的蓝奏云](https://wwi.lanzoup.com/iYyVp1mtojwd)
 
 程序里配置下面的链接并刷新即可
+
 ```text
 https://raw.hellogithub.com/hosts
 ```
@@ -155,6 +157,22 @@ https://raw.hellogithub.com/hosts
 
 ```shell
 find / -type f -size +50M | xargs ls -Slh
+```
+
+### 防白嫖，禁止ip直接访问
+
+nginx配置
+
+```shell
+server {
+	listen 8009;
+	server_name server.web.cn;
+	
+	if ($host != 'server.web.cn') {
+	return 444; #444为不响应请求，节省服务器资源；403为拒绝请求，会响应请求
+	}
+}
+
 ```
 
 ### 版权
@@ -171,6 +189,7 @@ find / -type f -size +50M | xargs ls -Slh
 - 若依Ruoyi
 
 ### 免责声明
+
 1. 此程序仅用于学习研究，不保证其合法性、准确性、有效性，请根据情况自行判断，本人对此不承担任何保证责任。
 2. 由于此程序仅用于学习研究，您必须在下载后 24 小时内将所有内容从您的计算机或手机或任何存储设备中完全删除，若违反规定引起任何事件本人对此均不负责。
 3. 请勿将此程序用于任何商业或非法目的，若违反规定请自行对此负责。
