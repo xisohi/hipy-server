@@ -38,14 +38,15 @@ if __name__ == '__main__':
     # with open('../files/drpy_js/分享短视频.js', encoding='utf-8') as f:
     # with open('../files/drpy_js/采集之王[合].js', encoding='utf-8') as f:
     # with open('../files/drpy_js/老白故事[听].js', encoding='utf-8') as f:
-    with open('../files/drpy_js/PTT[优].js', encoding='utf-8') as f:
+    # with open('../files/drpy_js/PTT[优].js', encoding='utf-8') as f:
+    with open('../files/drpy_js/影视工场.js', encoding='utf-8') as f:
         # with open('../files/drpy_js/耐看.js', encoding='utf-8') as f:
         code = f.read()
     code = code.replace('$nmjx_url', 'http://127.0.0.1:5708/nm?all=&url=')
     drpy.init(code)
     drpy.setDebug(1)
-    # print(drpy.homeContent())
-    # print(drpy.homeVideoContent())
+    print(drpy.homeContent())
+    print(drpy.homeVideoContent())
     # print(drpy.categoryContent('1', 1, False, {}))
     # print(drpy.detailContent('https://myd02.com/voddetail/21258.html'))
     # print(drpy.detailContent('https://v.ikanbot.com/play/846474'))
@@ -64,7 +65,7 @@ if __name__ == '__main__':
     #             }
     #             """)
 
-    print(drpy.categoryContent('3', 1, True, {"年份": "&year=2024"}))
+    # print(drpy.categoryContent('3', 1, True, {"年份": "&year=2024"}))
     # print(drpy.categoryContent('2', 1, False, {}))
     # print(drpy.detailContent("3$/detail/790.html"))
     # print(drpy.detailContent("https://nkvod.com/detail/185851.html"))
