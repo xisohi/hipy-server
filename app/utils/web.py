@@ -9,6 +9,7 @@ import re
 from ast import literal_eval
 from core.config import settings
 from jinja2 import Environment, FileSystemLoader, Template
+from fastapi import Request as Req
 
 
 def to_lower_camel_case(x):
@@ -49,6 +50,20 @@ def remove_comments(text):
 def parseJson(text: str):
     text = text.replace('false', 'False').replace('true', 'True').replace('null', 'None')
     return literal_eval(remove_comments(text))
+
+
+def getRealHost(host: str, request: Req):
+    """
+    获取正确的host，支持nginx提供的https反代
+    @param host:
+    @param request:
+    @return:
+    """
+    forwarded_proto = request.headers.get('X-Forwarded-Proto', request.url.scheme)
+    # print(f'forwarded_proto:{forwarded_proto}')
+    if forwarded_proto == 'https':
+        host = host.replace('http://', 'https://')
+    return host
 
 
 class HtmlSender:

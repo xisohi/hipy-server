@@ -21,6 +21,7 @@ import io
 from pathlib import Path
 from utils.httpapi import getGitContents, getJSFiles
 from apps.permission.models import Users
+from utils.web import getRealHost
 
 router = APIRouter()
 
@@ -83,6 +84,7 @@ def addRecordByID(*,
                   _ids: str
                   ):
     host = str(request.base_url).rstrip('/')
+    host = getRealHost(host, request)
     headers = dict(request.headers)
     logger.info(f'user:{u}')
     _ids = list(map(lambda x: int(x), _ids.split(',')))

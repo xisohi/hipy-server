@@ -22,6 +22,7 @@ from common.schemas import OrderNumSchema
 from ..curd.curd_rules import curd_vod_rules as curd
 from ..curd.curd_configs import curd_vod_configs
 from apps.system.curd.curd_dict_data import curd_dict_data
+from utils.web import getRealHost
 from ..models.vod_rules import VodRules
 
 from common.resp import respSuccessJson, respErrorJson
@@ -98,6 +99,7 @@ async def getRecordRawLink(*,
         host = settings.API_DOMAIN.rstrip('/')
     else:
         host = str(request.base_url).rstrip('/')
+    host = getRealHost(host, request)
     rule_data = curd.get(db, _id=_id, to_dict=False)
     groups = {}
     group_dict = curd_dict_data.getByType(db, _type='vod_rule_group')

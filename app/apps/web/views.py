@@ -19,7 +19,7 @@ from sqlalchemy import asc
 from core.constants import REDIS_KEY_LOGIN_TOKEN_KEY_PREFIX
 from core.config import settings
 from core.logger import logger
-from utils.web import htmler, render_template_string, remove_comments, parseJson
+from utils.web import htmler, render_template_string, remove_comments, parseJson, getRealHost
 from utils.cmd import update_db
 from utils.vod_tool import base64ToImage, get_interval
 from utils.tools import compress_and_encode
@@ -226,6 +226,7 @@ async def hipy_configs(*,
         host = settings.API_DOMAIN.rstrip('/')
     else:
         host = str(request.base_url).rstrip('/')
+    host = getRealHost(host, request)
     groups = {}
     group_dict = curd_dict_data.getByType(db, _type='vod_rule_group')
     group_details = group_dict.get('details')
@@ -528,6 +529,7 @@ async def t4_files(*,
         return request.query_params.get(key) or value
 
     host = str(request.base_url).rstrip('/')
+    host = getRealHost(host, request)
     # logger.info(f'host:{host}')
     resp = get_file_path(db, group, filename)
     if isinstance(resp, int):

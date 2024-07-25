@@ -29,6 +29,7 @@ from core.logger import logger
 from core.constants import BASE_DIR
 from utils.path import get_api_path, get_file_text, get_file_modified_time, get_now
 from utils.tools import get_md5
+from utils.web import getRealHost
 from dateutil.relativedelta import relativedelta
 from datetime import datetime
 from pathlib import Path
@@ -99,6 +100,7 @@ def vod_generate(*, api: str = "", request: Request,
     params_dict = request.query_params.__dict__['_dict']
     # 拿到网页host地址
     host = str(request.base_url).rstrip('/')
+    host = getRealHost(host, request)
     # 拿到完整的链接
     whole_url = str(request.url)
     # 拼接字符串得到t4_api本地代理接口地址
