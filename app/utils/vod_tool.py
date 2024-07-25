@@ -191,6 +191,9 @@ def batchFetch(items, max_workers=16):
     @return:
     """
     # print(items)
+    # 修复batchFetch传入值有误可能会发生错误问题。这里直接返回空值
+    if not items:
+        return []
     results = [None for item in items]
     with ThreadPoolExecutor(max_workers=min(len(items), max_workers)) as pool:
         tasks = [pool.submit(fetch, item.get('url'), item.get('options')) for item in
