@@ -1,14 +1,22 @@
 1.改壳子的代码:
 ```java
-        if(content.startsWith("//bb")){
+private void createObj() {
+        String spider = "__JS_SPIDER__";
+        String global = "globalThis." + spider;
+        String content = Module.get().fetch(api);
+        if (content.startsWith("//bb")) {
             cat = true;
-            ctx.evaluateModule(String.format(Module.get().fetch("assets://js/lib/spider.js"), key + ".js") + "globalThis." + key + " = __JS_SPIDER__;", "tv_box_root.js");
+            ctx.execute(Module.get().bb(content));
         } else {
+            content = content.replace(spider, global);
             if (content.contains("__jsEvalReturn") && !content.contains("export default")) {
                 cat = true;
             }
-            ctx.evaluateModule(String.format(Module.get().fetch("assets://js/lib/spider.js"), api) + "globalThis." + key + " = __JS_SPIDER__;\nconsole.log(typeof(" + key + "));console.log(Object.keys(globalThis." + key + "));", "tv_box_root.js");
+            ctx.evaluateModule(String.format(Module.get().fetch("assets://js/lib/spider.js"), api));
         }
+        jsObject = (JSObject) ctx.get(ctx.getGlobalObject(), spider);
+    }
+
 
 ```
 [qjs错误修复图片](./qjs错误修复.png)
