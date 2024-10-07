@@ -187,7 +187,7 @@ var rule = {
         let json=cut(html,'window.__INITIAL_STATE__=','};')
         .replace(/;$/,"").parseX.page;
         //log(json)
-        
+
         //let json = JSON.parse(html);
         let book_info = json;
         //log(book_info)
@@ -219,7 +219,7 @@ var rule = {
             //log(it)
             urls.push(it.title + '$' + it.itemId);
         });
-        
+
         log(book_info.abstract)
 
         VOD = {};
@@ -265,10 +265,13 @@ var rule = {
 
         // https://fanqienovel.com/api/reader/full?itemId=7377032009723413016
         // content_url = config.api + "/novel/book/reader/full/v1/?device_platform=android&parent_enterfrom=novel_channel_search.tab.&aid=2329&platform_id=1&item_id=" + c.item_id;
-        content_url = 'https://fanqienovel.com/api/reader/full?itemId=' + input;
+        //content_url = 'https://fanqienovel.com/api/reader/full?itemId=' + input;
+        content_url = 'https://fanqie.utuyyt.site/content/' + input;
         let json = JSON.parse(request(content_url, {headers: {Cookie: getFqCookie()}}));
-        title = json.data.chapterData.title;
-        content = decodeText(json.data.chapterData.content, 2);
+       // json = json.data.chapterData;
+        json = json.data.data;
+        title = json.title;
+        content = decodeText(json.content, 2);
         content = content.replace(/<\/p>/g, '\n').replace(/<\w+>/g, '').replace(/<[^>]*>/g, '');
         let ret = JSON.stringify({
             title,
