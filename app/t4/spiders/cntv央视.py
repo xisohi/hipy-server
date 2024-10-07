@@ -820,6 +820,7 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
     def hookM3u8(self, url):
         """
         https://www.52pojie.cn/thread-1932358-1-1.html
+        https://dh5.cntv.lxdns.com/asp//hls/2000/0303000a/3/default/2d0b6a3bfcf94da79cc16ae106d45a17/2000.m3u8
         JavaScript:$.ajaxSettings.async = false; var s = ""; let a = $.get(vodh5player.playerList[0].ads.contentSrc); for (var m = 0; m < a.responseText.match(/asp.*?m3u8/g).length; m++) { s = s + "https://hls.cntv.myalicdn.com//asp" + a.responseText.match(/asp.*?m3u8/g)[m].slice(7) + "\n\n" }; var blob = new Blob([s], { type: "text/plain" }); var url = URL.createObjectURL(blob); window.open(url);
         @param url:
         @return:
@@ -828,7 +829,9 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
         hook1 = lambda x: x.replace('asp/', 'asp//', 1)
         hook2 = lambda x: x.replace('hls/', 'hls//', 1)
         hook3 = lambda x: x.replace('https://newcntv.qcloudcdn.com', 'https://hls.cntv.myalicdn.com/', 1)
-        hooks = [hook1, hook2, hook3]
+        hook4 = lambda x: x.replace('https://newcntv.qcloudcdn.com', 'https://dh5.cntv.lxdns.com', 1).replace('asp/', 'asp//', 1)
+        # hooks = [hook1, hook2, hook3]
+        hooks = [hook4]
         hook = random.choice(hooks)
         return hook(url)
 
@@ -848,13 +851,15 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
         htmlTxt = self.fetch(url).text
         jo = json.loads(htmlTxt)
         link = jo['hls_url'].strip()
-        # print('hls_url:',link)
+        print('hls_url:',link)
         # 获取域名前缀
         urlPrefix = self.get_RegexGetText(Text=link, RegexText='(http[s]?://[a-zA-z0-9.]+)/', Index=1)
         # 域名前缀指定替换,然后可以获取到更高质量的视频列表
         # /asp/h5e/hls/2000/0303000a/3/default/3628bb15af644f588dc91ec68425b9ac/2000.m3u8
-        new_link = link.replace(f'{urlPrefix}/asp/hls/', 'https://dh5.cntv.qcloudcdn.com/asp/h5e/hls/').split('?')[0]
-        # print('new_link:',new_link)
+        # new_link = link.replace(f'{urlPrefix}/asp/hls/', 'https://dh5.cntv.qcloudcdn.com/asp/h5e/hls/').split('?')[0]
+        # https://dh5.cntv.lxdns.com/asp//hls/2000/0303000a/3/default/2d0b6a3bfcf94da79cc16ae106d45a17/2000.m3u8
+        new_link = link.split('?')[0]
+        print('new_link:',new_link)
         html = self.webReadFile(urlStr=new_link, header=self.header)
         content = html.strip()
         arr = content.split('\n')
@@ -865,6 +870,8 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
         # subUrl[-1] = '2000.m3u8'
         # hdUrl = urlPrefix + '/'.join(subUrl)
         maxVideo = subUrl[-1].replace('.m3u8', '')
+        if int(maxVideo) < 2000:
+            maxVideo = '2000'
         hdUrl = link.replace('main', maxVideo)
         hdUrl = hdUrl.replace(urlPrefix, 'https://newcntv.qcloudcdn.com')
         hdRsp = self.TestWebPage(urlStr=hdUrl, header=self.header)
