@@ -1,7 +1,7 @@
 var rule = {
     title: '可可影视[优]',
     host: 'https://www.keke8.app',
-    //host: 'https://keke5.app',
+    //host: 'https://www.kkys01.com',
     // url: '/show/fyclass-----2-fypage.html',
     url: '/show/fyclass-fyfilter-fypage.html',
     filter_url: '{{fl.类型}}-{{fl.地区}}-{{fl.语言}}-{{fl.年份}}-{{fl.排序}}',
@@ -14,22 +14,25 @@ var rule = {
     },
     class_parse: '#nav-swiper&&.nav-swiper-slide;a&&Text;a&&href;/(\\w+).html',
     cate_exclude: 'Netflix|今日更新|专题列表|排行榜',
+    tab_exclude:'可可影视提供',
     tab_order: ['超清', '蓝光', '极速蓝光'],
+    tab_remove:['4K(高峰不卡)'],
     play_parse: true,
     lazy: '',
     limit: 20,
     推荐: '.section-box:eq(2)&&.module-box-inner&&.module-item;*;*;*;*',
     double: false,
-    一级: '.module-box-inner&&.module-item;.v-item-title:eq(-1)&&Text;img&&data-original;.v-item-bottom&&span&&Text;a&&href',
+    一级: '.module-box-inner&&.module-item;.v-item-title:eq(1)&&Text;img:last-of-type&&data-original;.v-item-bottom&&span:eq(1)&&Text;a&&href',
     二级: {
-        title: '.detail-title&&Text;.detail-tags&&a:eq(-2)&&Text',
+        title: '.detail-pic&&img&&alt;.detail-tags&&a&&Text',
         img: '.detail-pic&&img&&data-original',
         desc: '.detail-info-row-main:eq(-2)&&Text;.detail-tags&&a&&Text;.detail-tags&&a:eq(1)&&Text;.detail-info-row-main:eq(1)&&Text;.detail-info-row-main&&Text',
         content: '.detail-desc&&Text',
-        tabs: '.source-item-label',
+        //tabs: '.source-item-label:nth-of-type(2)',
+        tabs: 'body&&.source-item-label[id]',
         lists: '.episode-list:eq(#id) a',
     },
-    搜索: '.search-result-list&&a;.title&&Text;*;.search-result-item-header&&Text;a&&href;.desc&&Text',
+    搜索: '.search-result-list&&a;.title:eq(1)&&Text;*;.search-result-item-header&&Text;a&&href;.desc&&Text',
     // 图片替换:$js.toString(()=>{
     //     log(input);
     //    input = input.replace(rule.host,'https://vres.a357899.cn');
