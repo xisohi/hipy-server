@@ -830,8 +830,10 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
         hook2 = lambda x: x.replace('hls/', 'hls//', 1)
         hook3 = lambda x: x.replace('https://newcntv.qcloudcdn.com', 'https://hls.cntv.myalicdn.com/', 1)
         hook4 = lambda x: x.replace('https://newcntv.qcloudcdn.com', 'https://dh5.cntv.lxdns.com', 1).replace('asp/', 'asp//', 1)
+        hook5 = lambda x: x.replace('https://newcntv.qcloudcdn.com', 'https://dh5.cntv.myhwcdn.cn', 1).replace('asp/', 'asp//', 1)
+        hook6 = lambda x: x.replace('https://newcntv.qcloudcdn.com', 'https://dh5.cntv.myalicdn.com', 1).replace('asp/', 'asp//', 1)
         # hooks = [hook1, hook2, hook3]
-        hooks = [hook4]
+        hooks = [hook4,hook5,hook6]
         hook = random.choice(hooks)
         return hook(url)
 
@@ -852,14 +854,19 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
         jo = json.loads(htmlTxt)
         link = jo['hls_url'].strip()
         print('hls_url:',link)
+        # print(json.dumps(jo))
+        link1 = jo['manifest']['hls_h5e_url'].strip()
+        print('hls_h5e_url:', link1)
         # 获取域名前缀
         urlPrefix = self.get_RegexGetText(Text=link, RegexText='(http[s]?://[a-zA-z0-9.]+)/', Index=1)
+        print("urlPrefix:",urlPrefix)
         # 域名前缀指定替换,然后可以获取到更高质量的视频列表
         # /asp/h5e/hls/2000/0303000a/3/default/3628bb15af644f588dc91ec68425b9ac/2000.m3u8
         # new_link = link.replace(f'{urlPrefix}/asp/hls/', 'https://dh5.cntv.qcloudcdn.com/asp/h5e/hls/').split('?')[0]
         # https://dh5.cntv.lxdns.com/asp//hls/2000/0303000a/3/default/2d0b6a3bfcf94da79cc16ae106d45a17/2000.m3u8
-        new_link = link.split('?')[0]
+        new_link = link1.split('?')[0]
         print('new_link:',new_link)
+        new_link = new_link.replace('https://dh5.cntv.qcloudcdn.com','https://dh5.cntv.myhwcdn.cn')
         html = self.webReadFile(urlStr=new_link, header=self.header)
         content = html.strip()
         arr = content.split('\n')
@@ -870,10 +877,12 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
         # subUrl[-1] = '2000.m3u8'
         # hdUrl = urlPrefix + '/'.join(subUrl)
         maxVideo = subUrl[-1].replace('.m3u8', '')
-        if int(maxVideo) < 2000:
-            maxVideo = '2000'
+        print('maxVideo:',maxVideo)
+        # if int(maxVideo) < 2000:
+        #     maxVideo = '2000'
         hdUrl = link.replace('main', maxVideo)
         hdUrl = hdUrl.replace(urlPrefix, 'https://newcntv.qcloudcdn.com')
+        print('hdUrl:',hdUrl)
         hdRsp = self.TestWebPage(urlStr=hdUrl, header=self.header)
         if hdRsp == 200:
             url = hdUrl.split('?')[0]
@@ -1043,6 +1052,7 @@ if __name__ == '__main__':
     # home_content = spider.homeContent(None)
     # print(home_content)
     cate_content = spider.categoryContent('栏目大全', 1, {'cid': 'n'}, {})
+    # cate_content = spider.categoryContent('4K专区', 1, {}, {})
     # cate_content = spider.categoryContent('频道直播', 1, None, None)
     print(cate_content)
     vid = cate_content['list'][0]['vod_id']
