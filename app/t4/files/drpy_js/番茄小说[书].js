@@ -64,6 +64,11 @@ function getRandomFromList(list) {
 
 globalThis.getFqCookie = function () {
     let cookies = [
+        'novel_web_id=78444872394737941004',
+        'novel_web_id=69258894393744181011',
+        'novel_web_id=77130880221809081001',
+        'novel_web_id=64945771562463261001',
+        'novel_web_id=78444872394737941004',
         'novel_web_id=0000000000004011402',
         'novel_web_id=0000000303614711402',
         'novel_web_id=0144211303614711401',
@@ -75,6 +80,7 @@ globalThis.getFqCookie = function () {
         'novel_web_id=7357767624615331365',
     ];
     return getRandomFromList(cookies)
+    // return cookies[13]
 }
 var rule = {
     类型: '小说',//影视|听书|漫画|小说
@@ -96,7 +102,8 @@ var rule = {
         情节: {筛选: '1034'},//如懿衍生
     },
     headers: {
-        'User-Agent': 'MOBILE_UA',
+        // 'User-Agent': 'MOBILE_UA',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
     },
     config: {
         api: 'https://novel.snssdk.com/api',
@@ -179,13 +186,13 @@ var rule = {
         setResult(d);
     }),
     二级: $js.toString(() => {
-        let html = request(input,{
-          headers:{
-              'User-Agent': 'PC_UA',
-          }
+        let html = request(input, {
+            headers: {
+                'User-Agent': 'PC_UA',
+            }
         });
-        let json=cut(html,'window.__INITIAL_STATE__=','};')
-        .replace(/;$/,"").parseX.page;
+        let json = cut(html, 'window.__INITIAL_STATE__=', '};')
+            .replace(/;$/, "").parseX.page;
         //log(json)
 
         //let json = JSON.parse(html);
@@ -249,7 +256,7 @@ var rule = {
         }
         setResult(d);
     }),
-    lazy: $js.toString(() => {
+    lazy_old: $js.toString(() => {
         let title = '小说标题';
         let content = '小说内容';
         let content_url = ''; // 正文获取接口
@@ -268,11 +275,29 @@ var rule = {
         //content_url = 'https://fanqienovel.com/api/reader/full?itemId=' + input;
         content_url = 'https://fanqie.utuyyt.site/content/' + input;
         let json = JSON.parse(request(content_url, {headers: {Cookie: getFqCookie()}}));
-       // json = json.data.chapterData;
+        // json = json.data.chapterData;
         json = json.data.data;
         title = json.title;
         content = decodeText(json.content, 2);
         content = content.replace(/<\/p>/g, '\n').replace(/<\w+>/g, '').replace(/<[^>]*>/g, '');
+        let ret = JSON.stringify({
+            title,
+            content
+        });
+        input = {parse: 0, url: 'novel://' + ret, js: ''};
+    }),
+    lazy: $js.toString(() => {
+        let title = '小说标题';
+        let content = '小说内容';
+        let content_url = ''; // 正文获取接口
+        content_url = `https://fanqienovel.com/reader/${input}?enter_from=reader`;
+        let html = request(content_url, {headers: {Cookie: getFqCookie()}});
+        html = html.match(/window.__INITIAL_STATE__=(.+?});/)[1];
+        let json = JSON.parse(html).reader.chapterData;
+        title = json.title;
+        content = decodeText(json.content, 2);
+        content = content.replace(/<\/p>/g, '\n').replace(/<\w+>/g, '').replace(/<[^>]*>/g, '');
+        // print(content)
         let ret = JSON.stringify({
             title,
             content
