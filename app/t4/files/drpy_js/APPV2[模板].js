@@ -45,7 +45,7 @@ var rule = {
         for (let k = 0; k < jsonData.length; k++) {
             let hasNonEmptyField = false;
             let _obj = {
-                type_name: jsonData[k].name,
+                type_name: jsonData[k].type_name,
                 type_id: jsonData[k].type_id,
             };
             _classes.push(_obj);
