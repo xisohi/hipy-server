@@ -32,7 +32,7 @@ var rule = {
     预处理: $js.toString(() => {
         log(`传入参数:${rule.params}`);
         let _host = rule.params.split('$')[0];
-        rule.parseUrl = rule.params.split('$')[1];
+        rule.parseUrl = rule.params.split('$')[1] || '';
         let _url = _host.rstrip('/') + '/api.php/app/nav?token';
         let _headers = {'User-Agent': 'Dart/2.14 (dart:io)'};
         let html = request(_url, {headers: _headers});
@@ -78,7 +78,7 @@ var rule = {
     }),
     play_parse: true,
     lazy: $js.toString(() => {
-        if (!/^http/.test(input)) {
+        if (!/^http/.test(input) && rule.parseUrl) {
             input = rule.parseUrl + input
         } else {
             input = {
