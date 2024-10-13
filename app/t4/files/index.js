@@ -195,6 +195,10 @@ async function main() {
             ];
         } else if (rname.includes('APPV2')) {
             extras = appv2_sites.map(s => `?type=url&params=${s}`);
+        }else if (rname.includes('夸克分享')) {
+            extras = [
+                '?type=url&params=../json/夸克分享.json@夸克分享',
+            ];
         }
 
         //let excludes = ['玩偶哥哥','阿里土豆'];
