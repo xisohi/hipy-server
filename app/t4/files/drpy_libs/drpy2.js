@@ -3362,16 +3362,12 @@ function init(ext) {
             } catch (e) {
                 console.log(`处理headers发生错误:${e.message}`);
             }
+        }else{
+            rule.headers = {}
         }
-        let _oheaders = rule.headers || {};
-        oheaders = deepCopy(_oheaders);
-        rule_fetch_params = {'headers': oheaders, 'timeout': rule.timeout, 'encoding': rule.encoding};
-        pre(); // 预处理
-        if(JSON.stringify(oheaders) !== JSON.stringify(rule.headers || {})){
-            console.log(`预处理改变了rule.headers,传递至rule_fetch_params`);
-            rule_fetch_params = {'headers': rule.headers, 'timeout': rule.timeout, 'encoding': rule.encoding};
-        }
+        rule_fetch_params = {'headers': rule.headers, 'timeout': rule.timeout, 'encoding': rule.encoding};
         RKEY = typeof (key) !== 'undefined' && key ? key : 'drpy_' + (rule.title || rule.host);
+        pre(); // 预处理
         init_test();
     } catch (e) {
         console.log(`init_test发生错误:${e.message}`);
