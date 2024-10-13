@@ -1627,6 +1627,46 @@ function keysToLowerCase(obj) {
     }, {});
 }
 
+//字符串To对象
+function parseQueryString(query) {
+  const params = {};
+  query.split('&').forEach(function(part) {
+    // 使用正则表达式匹配键和值，直到遇到第一个等号为止
+    const regex = /^(.*?)=(.*)/;
+    const match = part.match(regex);
+    if (match) {
+      const key = decodeURIComponent(match[1]);
+      const value = decodeURIComponent(match[2]);
+      params[key] = value;
+    }
+  });
+  return params;
+}
+
+//URL需要转码字符串
+function encodeIfContainsSpecialChars(value) {
+  // 定义在URL中需要编码的特殊字符
+  const specialChars = ":/?#[]@!$'()*+,;=%";
+  // 检查值中是否包含特殊字符
+  if (specialChars.split('').some(char => value.includes(char))) {
+    // 如果包含，则使用encodeURIComponent进行编码
+    return encodeURIComponent(value);
+  }
+  // 如果不包含特殊字符，返回原值
+  return value;
+}
+
+//对象To字符串
+function objectToQueryString(obj) {
+  const encoded = [];
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      encoded.push(encodeURIComponent(key) + '=' + encodeIfContainsSpecialChars(obj[key]));
+    }
+  }
+  return encoded.join('&');
+}
+
 /**
  * 海阔网页请求函数完整封装
  * @param url 请求链接
@@ -1702,6 +1742,17 @@ function request(url, obj, ocr_flag) {
     if (obj.redirect === false) {
         obj.redirect = 0;
     }
+    if(obj.headers.hasOwnProperty('Content-Type') ||obj.headers.hasOwnProperty('content-type')){
+    if(obj.headers["Content-Type"].includes("application/x-www-form-urlencoded")){
+       log("body");
+       //console.log(JSON.stringify(obj));
+       if(typeof obj.body=="string"){
+       let temp_obj=parseQueryString(obj.body);
+       //obj.body = objectToQueryString(temp_obj);
+       }
+     }
+    }
+    
     console.log(JSON.stringify(obj.headers));
     // console.log('request:'+url+' obj:'+JSON.stringify(obj));
     console.log('request:' + url + `|method:${obj.method || 'GET'}|body:${obj.body || ''}`);
