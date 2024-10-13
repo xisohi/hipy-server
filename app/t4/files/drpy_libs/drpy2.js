@@ -3363,11 +3363,14 @@ function init(ext) {
                 console.log(`处理headers发生错误:${e.message}`);
             }
         }
-        oheaders = rule.headers || {};
-        oheaders = deepCopy(oheaders);
+        let _oheaders = rule.headers || {};
+        oheaders = deepCopy(_oheaders);
+        rule_fetch_params = {'headers': oheaders, 'timeout': rule.timeout, 'encoding': rule.encoding};
         pre(); // 预处理
-        // print(rule.headers);
-        rule_fetch_params = {'headers': rule.headers || false, 'timeout': rule.timeout, 'encoding': rule.encoding};
+        if(JSON.stringify(oheaders) !== JSON.stringify(rule.headers || {})){
+            console.log(`预处理改变了rule.headers,传递至rule_fetch_params`);
+            rule_fetch_params = {'headers': rule.headers, 'timeout': rule.timeout, 'encoding': rule.encoding};
+        }
         RKEY = typeof (key) !== 'undefined' && key ? key : 'drpy_' + (rule.title || rule.host);
         init_test();
     } catch (e) {
