@@ -267,7 +267,8 @@ async def hipy_configs(*,
     drpy_rules = []
     for base_rule in base_drpy_rules:
         # 多个传参
-        if base_rule['ext'] and len(base_rule['ext'].split('\n')) > 1:
+        # fixed:单个传参且需要自定义改名的情况
+        if base_rule['ext'] and (len(base_rule['ext'].split('\n')) > 1 or '@' in base_rule['ext']):
             i = 1
             for rule_ext in base_rule['ext'].split('\n'):
                 ext_rule = base_rule.copy()
