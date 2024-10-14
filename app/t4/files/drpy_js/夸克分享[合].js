@@ -12,7 +12,6 @@ var rule = {
     filterable: 1,
     searchable: 2,
     quickSearch: 0,
-    hikerListCol:"avatar",
     // params:'../json/夸克分享.json',
     params: 'http://127.0.0.1:5707/files/json/夸克分享.json',
     headers: {
@@ -21,6 +20,7 @@ var rule = {
         'Content-Type': 'application/json',
         'Cookie': ''
     },
+    hikerListCol: "avatar",
     play_parse: true,
     lazy: $js.toString(() => {
         let url = input
