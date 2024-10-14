@@ -197,7 +197,7 @@ async function main() {
             extras = appv2_sites.map(s => `?type=url&params=${s}`);
         }else if (rname.includes('夸克分享')) {
             extras = [
-                '?type=url&params=../json/夸克分享.json@夸克分享',
+                '?type=url&params=../json/夸克分享.json@夸克分享[盘]',
             ];
         }
 
