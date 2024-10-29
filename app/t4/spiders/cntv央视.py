@@ -835,9 +835,11 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
         hook7 = lambda x: x.replace('https://newcntv.qcloudcdn.com', 'https://hls.cntv.lxdns.com', 1)
         hook8 = lambda x: x.replace('https://newcntv.qcloudcdn.com', 'https://hls.cntv.myhwcdn.cn', 1)
         hook9 = lambda x: x.replace('https://newcntv.qcloudcdn.com', 'https://hlssnap.video.cctv.com', 1)
+        hook10 = lambda x: x.replace('https://newcntv.qcloudcdn.com', 'https://cntv.playdreamer.cn/proxy', 1)
         # hooks = [hook1, hook2, hook3]
         # hooks = [hook4,hook5,hook6]
-        hooks = [hook9]
+        # hooks = [hook9]
+        hooks = [hook10]
         hook = random.choice(hooks)
         return hook(url)
 
