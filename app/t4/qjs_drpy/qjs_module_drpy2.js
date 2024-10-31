@@ -1,5 +1,5 @@
 let vercode = typeof (pdfl) === 'function' ? 'drpy2.1' : 'drpy2';
-const VERSION = vercode + ' 3.9.51beta5 20241014';
+const VERSION = vercode + ' 3.9.51beta5 20241031';
 
 function init_test() {
     // console.log(typeof(JSON5));
@@ -1718,12 +1718,14 @@ function request(url, obj, ocr_flag) {
         obj.redirect = 0;
     }
     if (obj.headers.hasOwnProperty('Content-Type') || obj.headers.hasOwnProperty('content-type')) {
-        if (obj.headers["Content-Type"].includes("application/x-www-form-urlencoded")) {
-            log("body");
+        let _contentType = obj.headers["Content-Type"] || obj.headers["content-type"] || "";
+        if (_contentType.includes("application/x-www-form-urlencoded")) {
+            log("custom body is application/x-www-form-urlencoded");
             //console.log(JSON.stringify(obj));
             if (typeof obj.body == "string") {
                 let temp_obj = parseQueryString(obj.body);
                 //obj.body = objectToQueryString(temp_obj);
+                console.log(JSON.stringify(temp_obj));
             }
         }
     }
