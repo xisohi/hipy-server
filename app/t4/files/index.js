@@ -109,7 +109,7 @@ async function main() {
     channels.push({
         'name': '稳定github直播',
         'urls': [
-            'proxy://do=live&type=txt&ext=https://ghproxy.net/https://raw.githubusercontent.com/ssili126/tv/main/itvlist.txt',
+            'proxy://do=live&type=txt&ext=https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/hipy-sniffer/refs/heads/main/static/lives/lives.m3u',
         ],
     });
     live_files.forEach((it) => {

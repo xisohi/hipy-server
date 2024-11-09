@@ -36,9 +36,9 @@ var rule = {
     let k4 = input.split("|")[1];
     let fc = input.split("|")[2];
 if (k4 === '7' && fc!== '体育'){
-        input = 'https://dh5.cntv.myhwcdn.cn/asp//hls/4000/0303000a/3/default/' + id + '/4000.m3u8';
+        input = 'https://hls09.cntv.myhwcdn.cn/asp/hls/4000/0303000a/3/default/' + id + '/4000.m3u8';
     } else {
-        input = 'https://dh5.cntv.myhwcdn.cn/asp//hls/2000/0303000a/3/default/' + id + '/2000.m3u8';
+        input = 'https://hls09.cntv.myhwcdn.cn/asp/hls/850/0303000a/3/default/' + id + '/850.m3u8';
     }
 //https://vdn.apps.cntv.cn/api/getHttpVideoInfo.do?pid='+input
 }),
@@ -135,7 +135,7 @@ if (k4 === '7' && fc!== '体育'){
     }),
     
     二级: $js.toString(() => {
-        let info = input.split("|");
+        let info = orId.split("|");
         
         VOD = {
             vod_id: info[0],

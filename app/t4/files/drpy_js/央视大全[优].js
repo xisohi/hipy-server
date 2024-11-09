@@ -124,7 +124,7 @@ input=JSON.parse(request('https://vdn.apps.cntv.cn/api/getHttpVideoInfo.do?pid='
     }),
     
     二级: $js.toString(() => {
-        let info = input.split("|");
+        let info = orId.split("|");
         
         VOD = {
             vod_id: info[0],
