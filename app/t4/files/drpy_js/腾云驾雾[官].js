@@ -165,20 +165,19 @@ var rule = {
         let html = request(input);
         let json = JSON.parse(html);
         if (json.data.smartboxItemList.length > 0) {
-            let url = json.data.smartboxItemList[0].basicDoc.id;
-            url = 'https://node.video.qq.com/x/api/float_vinfo2?cid=' + url;
-            let as = JSON.parse(request(url),);
+            let cid = json.data.smartboxItemList[0].basicDoc.id;
+            let url = 'https://node.video.qq.com/x/api/float_vinfo2?cid=' + cid;
+            let html1 = request(url);
+            let data = JSON.parse(html1);
 
             d.push({
-                title: as.c.title,
-                img: as.c.pic + "@Referer=",
+                title: data.c.title,
+                img: data.c.pic,
                 url: url,
-                content: as.c.description,
-                desc: as.rec
+                content: data.c.description,
+                desc: data.rec
             });
         }
-
         setResult(d);
-
     })
 }
