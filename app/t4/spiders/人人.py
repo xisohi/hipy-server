@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# File  : 胖虎.py
+# File  : 人人.py
 # Author: DaShenHan&道长-----先苦后甜，任凭晚风拂柳颜------
 # Author's Blog: https://blog.csdn.net/qq_32394351
 # Date  : 2024/11/10
@@ -28,7 +28,7 @@ from urllib.parse import quote_plus
 class Spider(BaseSpider):  # 元类 默认的元类 type
     module = None
     t = str(int(time.time()))
-    host = "http://sm.physkan.top:3389"
+    host = "http://renren.cupfox1.cc:7788"
     jsp = jsoup(host)
 
     def getDependence(self):
@@ -36,12 +36,12 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
         return []
 
     def getName(self):
-        return "胖虎"
+        return "人人"
 
     def init_headers(self):
         self.headers = {
             "User-Agent": "okhttp/3.14.9",
-            "app-version-code": "402",
+            "app-version-code": "167",
             "app-ui-mode": "light",
             "app-user-device-id": "25f869d32598d3d3089a929453dff0bb7",
             "app-api-verify-time": self.t,
@@ -99,7 +99,7 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
                 continue
             has_non_empty_field = False
             jsontype_extend = json.loads(item["type_extend"])
-            jsontype_extend["sort"] = "最新,最热,最赞"
+            jsontype_extend["sort"] = "最新,最热,最赞,日榜,月榜,周榜"
             classes.append({"type_name": item["type_name"], "type_id": item["type_id"]})
             for key in dy:
                 if key in jsontype_extend and jsontype_extend[key].strip() != "":
@@ -218,7 +218,7 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
         return [200, "video/MP2T", ""]
 
     def aes(self, operation, text):
-        key = "ihIwTbt2YAe9TGea".encode("utf-8")
+        key = "31c93c7bc211d734".encode("utf-8")
         iv = key
         if operation == "encrypt":
             cipher = AES.new(key, AES.MODE_CBC, iv)
@@ -237,10 +237,11 @@ if __name__ == '__main__':
 
     spider = Spider()
     t4_spider_init(spider)
-
     print(spider.homeContent(True))
     print(spider.homeVideoContent())
-    print(spider.categoryContent('21', 1, True, {}))
-    pprint(spider.detailContent(['144311']))
-    pprint(spider.playerContent('暴风', 'https://c1.7bbffvip.com/video/jiehunbabendana/第01集/index.m3u8', None))
-    print(spider.searchContent('朋友'))
+    print(spider.categoryContent('2', 1, True, {}))
+    pprint(spider.detailContent(['320']))
+    print(spider.playerContent('人人速线',
+                               'parse_api=76ec3c0bed7268c47702305d4cbd37a9&url=/3jgERptaT+Gbd/x0J3EyrvnB3GpJCA14x/oE9/l0+V2VK68ThRtLzC5OqejUC9f&token=',
+                               None))
+    print(spider.searchContent('庆余年'))
