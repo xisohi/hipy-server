@@ -57,11 +57,15 @@ api里会自动含有ext参数是base64编码后的选中的筛选条件
     "filterable": 1,
     "ext": "{{host}}/files/hipy/cntv央视.json"
 },
+
+支持代理
+"ext":"./cntv央视.json$http://cntv.xxx.com/proxy"
 """
 
 
 class Spider(BaseSpider):  # 元类 默认的元类 type
     module = None
+    cntvParser = ''
 
     def getDependence(self):
         return ['base_spider']
@@ -217,6 +221,10 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
         print("============依赖列表:{0}============".format(extend))
         ext = self.extend
         print("============ext:{0}============".format(ext))
+        if '$' in ext:
+            self.cntvParser = ext.split('$')[1]
+            ext = ext.split('$')[0]
+
         if isinstance(ext, str) and ext:
             if ext.startswith('./'):
                 ext_file = os.path.join(os.path.dirname(__file__), ext)
@@ -577,10 +585,11 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
                 htmlTxt = self.fetch(id).text
                 guid = self.get_RegexGetText(Text=htmlTxt, RegexText=r'var\sguid\s*=\s*"(.+?)";', Index=1)
                 url = self.get_m3u8(urlTxt=guid)
-            except:
+            except Exception as e:
+                self.log(f'{e}')
                 url = id
                 parse = 1
-        if url.find('https:') < 0:
+        if url.find('https:') < 0 and url.find('http:') < 0:
             url = id
             parse = 1
         result["parse"] = parse  # 1=嗅探,0=播放
@@ -829,17 +838,28 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
         hook1 = lambda x: x.replace('asp/', 'asp//', 1)
         hook2 = lambda x: x.replace('hls/', 'hls//', 1)
         hook3 = lambda x: x.replace('https://newcntv.qcloudcdn.com', 'https://hls.cntv.myalicdn.com/', 1)
-        hook4 = lambda x: x.replace('https://newcntv.qcloudcdn.com', 'https://dh5.cntv.lxdns.com', 1).replace('asp/', 'asp//', 1)
-        hook5 = lambda x: x.replace('https://newcntv.qcloudcdn.com', 'https://dh5.cntv.myhwcdn.cn', 1).replace('asp/', 'asp//', 1)
-        hook6 = lambda x: x.replace('https://newcntv.qcloudcdn.com', 'https://dh5.cntv.myalicdn.com', 1).replace('asp/', 'asp//', 1)
+        hook4 = lambda x: x.replace('https://newcntv.qcloudcdn.com', 'https://dh5.cntv.lxdns.com', 1).replace('asp/',
+                                                                                                              'asp//',
+                                                                                                              1)
+        hook5 = lambda x: x.replace('https://newcntv.qcloudcdn.com', 'https://dh5.cntv.myhwcdn.cn', 1).replace('asp/',
+                                                                                                               'asp//',
+                                                                                                               1)
+        hook6 = lambda x: x.replace('https://newcntv.qcloudcdn.com', 'https://dh5.cntv.myalicdn.com', 1).replace('asp/',
+                                                                                                                 'asp//',
+                                                                                                                 1)
         hook7 = lambda x: x.replace('https://newcntv.qcloudcdn.com', 'https://hls.cntv.lxdns.com', 1)
         hook8 = lambda x: x.replace('https://newcntv.qcloudcdn.com', 'https://hls.cntv.myhwcdn.cn', 1)
         hook9 = lambda x: x.replace('https://newcntv.qcloudcdn.com', 'https://hlssnap.video.cctv.com', 1)
         hook10 = lambda x: x.replace('https://newcntv.qcloudcdn.com', 'https://cntv.playdreamer.cn/proxy', 1)
+        hook11 = lambda x: x.replace('https://newcntv.qcloudcdn.com', self.cntvParser, 1).replace('/asp/hls',
+                                                                                                  '/asp/h5e/hls')
         # hooks = [hook1, hook2, hook3]
         # hooks = [hook4,hook5,hook6]
         # hooks = [hook9]
-        hooks = [hook10]
+        if self.cntvParser:
+            hooks = [hook11]
+        else:
+            hooks = [hook10]
         hook = random.choice(hooks)
         return hook(url)
 
@@ -859,20 +879,20 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
         htmlTxt = self.fetch(url).text
         jo = json.loads(htmlTxt)
         link = jo['hls_url'].strip()
-        print('hls_url:',link)
+        print('hls_url:', link)
         # print(json.dumps(jo))
         link1 = jo['manifest']['hls_h5e_url'].strip()
         print('hls_h5e_url:', link1)
         # 获取域名前缀
         urlPrefix = self.get_RegexGetText(Text=link, RegexText='(http[s]?://[a-zA-z0-9.]+)/', Index=1)
-        print("urlPrefix:",urlPrefix)
+        print("urlPrefix:", urlPrefix)
         # 域名前缀指定替换,然后可以获取到更高质量的视频列表
         # /asp/h5e/hls/2000/0303000a/3/default/3628bb15af644f588dc91ec68425b9ac/2000.m3u8
         # new_link = link.replace(f'{urlPrefix}/asp/hls/', 'https://dh5.cntv.qcloudcdn.com/asp/h5e/hls/').split('?')[0]
         # https://dh5.cntv.lxdns.com/asp//hls/2000/0303000a/3/default/2d0b6a3bfcf94da79cc16ae106d45a17/2000.m3u8
         new_link = link1.split('?')[0]
-        print('new_link:',new_link)
-        new_link = new_link.replace('https://dh5.cntv.qcloudcdn.com','https://dh5.cntv.myhwcdn.cn')
+        print('new_link:', new_link)
+        new_link = new_link.replace('https://dh5.cntv.qcloudcdn.com', 'https://dh5.cntv.myhwcdn.cn')
         html = self.webReadFile(urlStr=new_link, header=self.header)
         content = html.strip()
         arr = content.split('\n')
@@ -883,12 +903,12 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
         # subUrl[-1] = '2000.m3u8'
         # hdUrl = urlPrefix + '/'.join(subUrl)
         maxVideo = subUrl[-1].replace('.m3u8', '')
-        print('maxVideo:',maxVideo)
+        print('maxVideo:', maxVideo)
         # if int(maxVideo) < 2000:
         #     maxVideo = '2000'
         hdUrl = link.replace('main', maxVideo)
         hdUrl = hdUrl.replace(urlPrefix, 'https://newcntv.qcloudcdn.com')
-        print('hdUrl:',hdUrl)
+        print('hdUrl:', hdUrl)
         hdRsp = self.TestWebPage(urlStr=hdUrl, header=self.header)
         if hdRsp == 200:
             url = hdUrl.split('?')[0]
@@ -896,6 +916,7 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
             self.log(f'视频链接: {url}')
         else:
             url = ''
+            self.log('未获取到视频链接')
         return url
 
     def fixm3u8_url(self, url):
@@ -1047,7 +1068,8 @@ if __name__ == '__main__':
     from t4.core.loader import t4_spider_init
 
     spider = Spider()
-    t4_spider_init(spider)
+    # t4_spider_init(spider)
+    t4_spider_init(spider, './cntv央视.json$http://cntv.xxx.com/proxy')
     # print(spider.homeContent(True))
     # print(spider.homeVideoContent())
     # spider.init_api_ext_file()
