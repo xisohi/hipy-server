@@ -66,6 +66,7 @@ api里会自动含有ext参数是base64编码后的选中的筛选条件
 class Spider(BaseSpider):  # 元类 默认的元类 type
     module = None
     cntvParser = ''
+    publicCdn = 0
 
     def getDependence(self):
         return ['base_spider']
@@ -223,6 +224,8 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
         print("============ext:{0}============".format(ext))
         if '$' in ext:
             self.cntvParser = ext.split('$')[1]
+            if len(ext.split('$')) > 2:
+                self.publicCdn = int(bool(ext.split('$')[2]))
             ext = ext.split('$')[0]
 
         if isinstance(ext, str) and ext:
@@ -853,11 +856,14 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
         hook10 = lambda x: x.replace('https://newcntv.qcloudcdn.com', 'https://cntv.playdreamer.cn/proxy', 1)
         hook11 = lambda x: x.replace('https://newcntv.qcloudcdn.com', self.cntvParser, 1).replace('/asp/hls',
                                                                                                   '/asp/h5e/hls')
+        hook12 = lambda x: x.replace('https://newcntv.qcloudcdn.com', self.cntvParser, 1)
         # hooks = [hook1, hook2, hook3]
         # hooks = [hook4,hook5,hook6]
         # hooks = [hook9]
-        if self.cntvParser:
+        if self.cntvParser and not self.publicCdn:
             hooks = [hook11]
+        elif self.cntvParser and self.publicCdn:
+            hooks = [hook12]
         else:
             hooks = [hook10]
         hook = random.choice(hooks)
@@ -1069,6 +1075,9 @@ if __name__ == '__main__':
 
     spider = Spider()
     # t4_spider_init(spider)
+    # 外部公开cdn
+    # t4_spider_init(spider, './cntv央视.json$http://cntv.xxx.com/proxy$1')
+    # 自建解析
     t4_spider_init(spider, './cntv央视.json$http://cntv.xxx.com/proxy')
     # print(spider.homeContent(True))
     # print(spider.homeVideoContent())
