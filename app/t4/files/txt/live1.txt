@@ -1,0 +1,102 @@
+🌏｜央视频道,#genre#
+CCTV1综合,https://live.huaren.live/stream/CCTV1.m3u8
+CCTV2经济,https://live.huaren.live/stream/CCTV2.m3u8
+CCTV3综艺,https://live.huaren.live/stream/CCTV3.m3u8
+CCTV4中文国际,https://live.huaren.live/stream/CCTV4.m3u8
+CCTV5体育,https://live.huaren.live/stream/CCTV5.m3u8
+CCTV5+体育赛事,https://live.huaren.live/stream/CCTV5P.m3u8
+CCTV6电影,https://live.huaren.live/stream/CCTV6.m3u8
+CCTV7军事,https://live.huaren.live/stream/CCTV7.m3u8
+CCTV8电视剧,https://live.huaren.live/stream/CCTV8.m3u8
+CCTV9纪录片,https://live.huaren.live/stream/CCTV9.m3u8
+CCTV10科教,https://live.huaren.live/stream/CCTV10.m3u8
+CCTV11戏曲,https://live.huaren.live/stream/CCTV11.m3u8
+CCTV12社会与法,https://live.huaren.live/stream/CCTV12.m3u8
+CCTV-13新闻,https://live.huaren.live/stream/CCTV13.m3u8
+CCTV14少儿,https://live.huaren.live/stream/CCTV14.m3u8
+CCTV15音乐频道,https://live.huaren.live/stream/CCTV15.m3u8
+CCTV16奥运频道,https://live.huaren.live/stream/CCTV16.m3u8
+🛰｜卫视频道,#genre#
+湖南卫视,https://live.huaren.live/stream/hnws.m3u8
+浙江卫视,https://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8
+深圳卫视,https://live.huaren.live/stream/szws.m3u8
+山东卫视,https://live.huaren.live/stream/sdws.m3u8
+安徽卫视,https://live.huaren.live/stream/anhuiweishi.m3u8
+江苏卫视,https://live.huaren.live/stream/jsws.m3u8
+辽宁卫视,https://live.huaren.live/stream/liaoningweishi.m3u8
+四川卫视,https://live.huaren.live/stream/sichuanweishi.m3u8
+天津卫视,https://live.huaren.live/stream/tjws.m3u8
+重庆卫视,https://live.huaren.live/stream/cqws.m3u8
+东方卫视,https://live.huaren.live/stream/dfws.m3u8
+北京卫视,https://live.huaren.live/stream/bjws.m3u8
+广东卫视,https://live.huaren.live/stream/gdws.m3u8
+👑｜港台频道,#genre#
+VIUTV6,https://live.huaren.live/stream/aktv2_viutv696.m3u8
+ViuTV,https://live.huaren.live/stream/aktv2_viutv99.m3u8
+Hoy77,https://live.huaren.live/stream/hoyzixun.m3u8
+HOY78资讯台,https://live.huaren.live/stream/aktv_hoy78.m3u8
+凤凰卫视,https://live.huaren.live/stream/aktv_null-3.m3u8
+凤凰资讯,https://live.huaren.live/stream/aktv_null-4.m3u8
+NOW爆谷台,https://live.huaren.live/stream/aktv2_null.m3u8
+龍華日韓台,https://live.huaren.live/stream/aktv_null-22.m3u8
+黄金翡翠,https://live.huaren.live/stream/aktv_null-21.m3u8
+Now星影台,https://live.huaren.live/stream/aktv2_now.m3u8
+靖天電影台,https://live.huaren.live/stream/aktv_null-6.m3u8
+美亞電影台,https://live.huaren.live/stream/aktv_hk-1.m3u8
+明珠台,https://live.huaren.live/stream/aktv_null-2.m3u8
+TVB星河台,https://live.huaren.live/stream/aktv2_tvb.m3u8
+千禧經典台,https://live.huaren.live/stream/aktv_null-15.m3u8
+PopC,https://live.huaren.live/stream/aktv_popc.m3u8
+娛樂新聞台,https://live.huaren.live/stream/aktv_hk.m3u8
+龍華電影台,https://live.huaren.live/stream/aktv_null-23.m3u8
+龍華經典台,https://live.huaren.live/stream/aktv_null-7.m3u8
+ROCK Action,https://live.huaren.live/stream/aktv_rockaction.m3u8
+无线新闻台,https://live.huaren.live/stream/aktv_null-1.m3u8
+台視,https://live.huaren.live/stream/litv_4gtv-4gtv066.m3u8
+TVBS,https://live.huaren.live/stream/litv_4gtv-4gtv073.m3u8
+中視,https://live.huaren.live/stream/litv_4gtv-4gtv040.m3u8
+華視,https://live.huaren.live/stream/litv_4gtv-4gtv041.m3u8
+民視,https://live.huaren.live/stream/litv_4gtv-4gtv002.m3u8
+NOWTV,https://live.huaren.live/stream/nowtv.m3u8
+翡翠台,https://live.huaren.live/stream/feicuitai.m3u8
+👑｜国际频道,#genre#
+日本全天新聞,https://live.huaren.live/stream/aktv_null-13.m3u8
+明珠剧集台(北美),https://live.huaren.live/stream/aktv_null-19.m3u8
+翡翠综合台(北美),https://live.huaren.live/stream/aktv_null-17.m3u8
+翡翠剧集台(北美),https://live.huaren.live/stream/aktv_null-18.m3u8
+无线新闻台(北美),https://live.huaren.live/stream/aktv2_null-1.m3u8
+IQIYI,https://live.huaren.live/stream/iqiyi.m3u8
+8频道,https://live.huaren.live/stream/aktv_channel8hd.m3u8
+U频道,https://live.huaren.live/stream/aktv_channeluhd.m3u8
+5频道,https://live.huaren.live/stream/aktv_channel5hd.m3u8
+欢喜台,https://live.huaren.live/stream/huanxitai.m3u8
+Astro QJ,https://live.huaren.live/stream/QJ.m3u8
+AEC,https://live.huaren.live/stream/AEC.m3u8
+8TV,https://live.huaren.live/stream/8TV.m3u8
+TV2,https://live.huaren.live/stream/TV2.m3u8
+新时代东,https://live.huaren.live/stream/xinshidaidongbu.m3u8
+新时代西,https://live.huaren.live/stream/xinshidaixibu.m3u8
+新时代2台,https://live.huaren.live/stream/xinshidai2.m3u8
+👑｜体育频道,#genre#
+咪咕体育1,https://live.huaren.live/stream/migu1.m3u8
+咪咕体育2,https://live.huaren.live/stream/migu2.m3u8
+咪咕体育3,https://live.huaren.live/stream/migu3.m3u8
+咪咕体育4,https://live.huaren.live/stream/migu4.m3u8
+NOW SPORTS 1,https://live.huaren.live/stream/nowsport1.m3u8
+18台,https://live.huaren.live/stream/aktv_mytvsuper18.m3u8
+TVB J2,https://live.huaren.live/stream/j2.m3u8
+爱尔达体育1台,https://live.huaren.live/stream/eltasport1.m3u8
+爱尔达体育2台,https://live.huaren.live/stream/eltasport2.m3u8
+爱尔达体育3台,https://live.huaren.live/stream/eltasport3.m3u8
+CCTV5体育,https://live.huaren.live/stream/CCTV5.m3u8
+CCTV5+体育赛事,https://live.huaren.live/stream/CCTV5P.m3u8
+博斯运动一台,https://live.huaren.live/stream/litv_litv-longturn07.m3u8
+博斯运动二台,https://live.huaren.live/stream/litv_litv-longturn08.m3u8
+博斯無限台,https://live.huaren.live/stream/litv_litv-longturn10.m3u8
+博斯無限二台,https://live.huaren.live/stream/litv_litv-longturn13.m3u8
+博斯網球台,https://live.huaren.live/stream/litv_litv-longturn09.m3u8
+博斯高球台,https://live.huaren.live/stream/litv_litv-longturn05.m3u8
+博斯高球二台,https://live.huaren.live/stream/litv_litv-longturn06.m3u8
+博斯魅力台,https://live.huaren.live/stream/litv_litv-longturn04.m3u8
+📺｜定期维护,#genre#
+24年11月15日更新,https://live.huaren.live/stream/CCTV6.m3u8
