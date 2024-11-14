@@ -493,6 +493,9 @@ def get_file_path(db: Session, group, filename):
             if filename.endswith('.js'):
                 return [file_path, 'text/javascript; charset=utf-8']
 
+            elif filename.endswith('.m3u'):
+                return [file_path, 'text/plain; charset=utf-8']
+
             return [file_path]
 
     else:
