@@ -52,7 +52,79 @@ globalThis.decodeText = function (text, _type) {
     // return _decodeText(text);
     return _decodeText2(text);
 };
-
+if(typeof stringUtils==='undefined'){
+    globalThis.stringUtils = function () {
+    Object.defineProperties(String.prototype, {
+        replaceX: {
+            value: function (regex, replacement) {
+                let matches = matchesAll(this, regex, true);
+                if (matches && matches.length > 1) {
+                    const hasCaptureGroup = /\$\d/.test(replacement);
+                    if (hasCaptureGroup) {
+                        return this.replace(regex, (m) => m.replace(regex, replacement));
+                    } else {
+                        return this.replace(regex, (m, p1) => m.replace(p1, replacement));
+                    }
+                }
+                return this.replace(regex, replacement);
+            },
+            configurable: true,
+            enumerable: false,
+            writable: true
+        },
+        parseX: {
+            get: function () {
+                try {
+                    //console.log(typeof this);
+                    return JSON.parse(this);
+                } catch (e) {
+                    console.log(e.message);
+                    return this.startsWith("[") ? [] : {};
+                }
+            },
+            configurable: true,
+            enumerable: false,
+        }
+    });
+}
+}
+if(typeof cut === 'undefined'){
+    globalThis.cut = function (text, start, end, method, All) {
+    let result = "";
+    let c = (t, s, e) => {
+        let result = "";
+        let rs = [];
+        let results = [];
+        try {
+            let lr = new RegExp(String.raw`${s}`.toString());
+            let rr = new RegExp(String.raw`${e}`.toString());
+            const segments = t.split(lr);
+            if (segments.length < 2) return '';
+            let cutSegments = segments.slice(1).map(segment => {
+                let splitSegment = segment.split(rr);
+                //log(splitSegment)
+                return splitSegment.length < 2 ? undefined : splitSegment[0] + e;
+            }).filter(f => f);
+            //log(cutSegments.at(-1))
+            if (All) {
+                return `[${cutSegments.join(',')}]`;
+            } else {
+                return cutSegments[0];
+            }
+        } catch (e) {
+            console.log(`Error cutting text:${e.message}`);
+        }
+        return result;
+    }
+    result = c(text, start, end);
+    stringUtils();
+    if (method && typeof method === "function") {
+        result = method(result);
+    }
+    //console.log(result);
+    return result
+}
+}
 function getRandomFromList(list) {
     // 将列表转换为数组
     const array = Array.isArray(list) ? list : Array.from(list);
@@ -88,7 +160,8 @@ var rule = {
     host: 'https://fanqienovel.com',
     homeUrl: 'https://fanqienovel.com/api/author/book/category_list/v0/',
     url: '/api/author/library/book_list/v0/?page_count=18&page_index=(fypage-1)&gender=-1&category_id=fyclass&creation_status=-1&word_count=-1&sort=0#fyfilter',
-    searchUrl: '/api/author/search/search_book/v1/?filter=127,127,127,127&page_count=10&page_index=(fypage-1)&query_type=0&query_word=**',
+    // searchUrl: '/api/author/search/search_book/v1/?filter=127,127,127,127&page_count=10&page_index=(fypage-1)&query_type=0&query_word=**',
+    searchUrl:'https://api5-normal-lf.fqnovel.com/reading/bookapi/search/page/v/?query=**&aid=1967&channel=0&os_version=0&device_type=0&device_platform=0&iid=466614321180296&passback=((fypage-1)*10)&version_code=999',
     searchable: 2,
     quickSearch: 0,
     filterable: 1,
@@ -240,7 +313,7 @@ var rule = {
         VOD.vod_play_from = "番茄小说";
         VOD.vod_play_url = urls.join('#');
     }),
-    搜索: $js.toString(() => {
+    搜索1: $js.toString(() => {
         let d = [];
         let html = request(input);
         let json = JSON.parse(html);
@@ -252,6 +325,23 @@ var rule = {
                 desc: decodeText(it.author, 1),
                 content: decodeText(it.book_abstract, 1),
                 pic_url: it.thumb_url
+            });
+        }
+        setResult(d);
+    }),
+    搜索: $js.toString(() => {
+        let d = [];
+        let html = request(input);
+        let json = JSON.parse(html);
+        for (let it of json.data) {
+            let book = it.book_data[0];
+            d.push({
+                title: book.book_name,
+                //url: rule.config.api + "/novel/book/directory/list/v1?book_id=" + it.book_id,
+                url: "https://fanqienovel.com/page/" + book.book_id,
+                desc: book.author,
+                content: book.book_abstract,
+                pic_url: book.thumb_url
             });
         }
         setResult(d);
