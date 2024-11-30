@@ -265,7 +265,7 @@ var rule = {
             }
         });
         let json = cut(html, 'window.__INITIAL_STATE__=', '};')
-            .replace(/;$/, "").parseX.page;
+            .replace(/;$/, "").replaceAll('undefined','null').parseX.page;
         //log(json)
 
         //let json = JSON.parse(html);
