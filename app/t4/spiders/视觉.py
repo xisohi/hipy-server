@@ -22,6 +22,8 @@ class Spider(BaseSpider):
 
     def init(self, extend=""):
         print("============{0}============".format(extend))
+        self.host = self.get_host()
+        print('host:', self.host)
         pass
 
     def isVideoFormat(self, url):
@@ -210,7 +212,7 @@ class Spider(BaseSpider):
         data = '\n'.join(lines)
         return [200, "application/vnd.apple.mpegur", data]
 
-    def host(self):
+    def get_host(self):
         try:
             url = self.fetch('https://www.shijue.pro/token.txt', headers=self.headers).json()['domain']
             return url
