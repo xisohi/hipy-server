@@ -1,14 +1,1 @@
-var rule = {
-   模板: '自动',
-   模板修改: $js.toString(() => {
-       Object.assign(muban.自动.二级, {
-          tab_text: 'div--small&&Text',
-        });
-    }),
-    title: '影剧星球[自动]',
-    host: 'https://jumov.com',
-    url: '/vod/list/fypage/fyclass/0/0/0/0/0/0',
-    searchUrl: '/public/auto/search1.html?keyword=**&page=fypage',
-    class_parse: '.navbar-items li:gt(1):lt(8);a&&Text;a&&href;/vod/1/(.*?)/0/0/0/0/0/0',
-    搜索: 'body .module-item;.module-poster-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href',
-}
+H4sIALXdWmcC/22RsU7cQBCGe55ii8jYJ7yb6yJbFx6BAqgihMb2Yu9l7bV2xyYHoqKIEqWgSJEiKEoaUAokpDRBingZzpfHYO11dEFiXIw84//7f41b0EQ3kpMZOd0ghHTX37vL+4hs/n3/c/nxenNrPXy4v+k+/47Ii7mhqHZRiyr3/YDMXjtpXzvJnKdIwRiRV37ZJFBRR6IPd59Wd1db629tISSHyN+h9ctEG4amBCk9b8+OnPNQZ0G84bqboUDJrWT553b54ar78m11cf7GuRyMskKZHlog1iZibN6UqqWpKsd1o6XdslZlTAqD7GhRQ85tS6WNzl6un1FgOOi02HeyukmkSBk0qJhbTGmBpdx+yxfHSmezycTreTOHHRED+rAGbfrstII2AR0K5KUhUkQ5+tMgkui/CmJwJ+h7oflRPASdMp9OtoNnwnUXX1e/flhoorIFoaXK7A8dyPG/l9regzu3cDjf6EAlnCykgszzMkAIlRa5qEDG/1PCSiF/Gsk6nz0CN4YNqTsCAAA=

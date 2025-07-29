@@ -1,17 +1,1 @@
-var rule = {
-    模板: 'vfed',
-    title: '饭团影视',
-    host: 'https://fantuansjz.com/',
-    url: '/sjvodshow/fyclass--------fypage---.html',
-    searchUrl: '/sjvodsearch/**----------fypage---.html',
-    class_parse: '.fed-navs-left&&a;a&&Text;a&&href;/sjvodtype/(.*?).html',
-    二级: {
-        title: 'h3&&Text;.fed-deta-content&&li:eq(2)--span&&Text',
-        img: '.fed-list-pics&&data-original',
-        desc: '.fed-list-remarks&&Text;.fed-deta-content&&li:eq(4)--span&&Text;.fed-deta-content&&li:eq(3)--span&&Text;.fed-deta-content&&li--span&&Text;.fed-deta-content&&li:eq(1)--span&&Text',
-        content: '',
-        tabs: 'body&&.fed-tabs-btn',
-        lists: 'body&&.fed-tabs-btm:eq(#id)&&li',
-    },
-    搜索: 'body&&.fed-part-layout&&.fed-list-deta;h3&&Text;*;*;.fed-deta-play&&href;.fed-part-rows&&Text',
-}
+H4sIALTdWmcC/41SPU/DMBDd+RWRkNIP4UZQplaIPwEzuiZOk+LEwXdtCagrEwM7MFAJlYUBiakS4s/QFv4FTmraVKLQy2Dr+d17fhf3QFmqK7h1YF1uWbqmTw/T+/eGVer53Cvt5BiFJLiGvh6fJ7fDydvL5+jKHAUSSZ8ERAk2HMeHmLoQY+ei5srIMaSuEprjYKcnPQxk3/FTVwAiM+WnCbS53tQCioRpQg7KDY6LrTniVKuM/dmZa58koDC7dE3nYDH0kAnuk21DE2z7iJ9TtgaK+825OqUJd8q16mGlqPUxvp6NRw0znOIwgrqRyQ08TsBcGROPtYcIG/ysvFdhDBOI5zwjmFUYtX8uJkIkloQu2rYHWkKqsB3GIApsj6O7Qlc8AnWK/9nvr9iv59U34G2mtLsusOHpFAWQoIUaaUkvte1cM0NYi+ICKQv8OyvKHLdDr5K5m47BfJne3M1eh6td+jkQE5DKLhkkn2UWo7n4lVX9LdMlmm6eyFJCyT4u8g2+AaGmZ5w/AwAA

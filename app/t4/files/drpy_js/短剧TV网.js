@@ -1,16 +1,1 @@
-Object.assign(muban.首图2.二级, {
-    tabs: '.stui-pannel__head h3',
-    img: '.stui-content__thumb img&&src',
-});
-var rule = {
-    模板: '首图2',
-    title: '短剧TV网',
-    host: 'http://www.duanjutv.cc',
-    url: '/vodtype/fyclass-fypage.html',
-    searchUrl: '/vodsearch/**----------fypage---.html',
-    推荐: 'ul.stui-vodlist.clearfix;li;*;*;*;*',
-    double: true,
-    tab_remove:['gsyun','光速m3u8'],
-    一级: '.stui-vodlist li;a&&title;img&&src;.pic-text&&Text;a&&href',
-    搜索: 'ul.stui-vodlist__media:eq(0),ul.stui-vodlist:eq(0),#searchList li;a&&title;*;.text-muted&&Text;a&&href;.text-muted:eq(-1)&&Text',
-}
+H4sIAKPdWmcC/2WSzU7bQBSF9zyFJSQ7iewxkA2KxRtUYgNsUGWNxzfxoPEPnjv5EarEhgVSi+imG1pFsCBsuuuiQiq8DEnIW3QcTyJKx5Jlz/3OPXOPvR+dAENCpeS9rJGqiGZkcf9tevO0Q14eP88fJ651tmHphTSSHcshEhX3CpplIMIwARpbSdtxlwhPe2uC5RlChmGIiUqjqmTbsmSa/NQMNvq0tEolwNoz3WcPt7Mfz1ptzE1H5ChA787HP6eXk4Oj+Z+vppLkEnUhQSw6vj8YDEisaHaisE8YM4wqhUb8fh7jqAC/O2JCD+p1RwXtAUkwFQaUQEuWHK7x+t1vtbz1qkX64a1udvXw+uVai5Sop9ZawSUSJnSHLh8Ggget+jKSOFdRNRKWCtxVsGEJad6HzrHTkyOVOa4zvbhcnI/Tttp1PtbYy+9z/TXW+RonSxtQ217mFKxCDkjBmYcwRNs+0PeKSErork59/X3+6+7/U4dhCjGnHThtbDXdd0Wzu1lH8+G9dSsglZ+XKoT4X9e3laqLt92sgepf+Avv/CmFgAIAAA==

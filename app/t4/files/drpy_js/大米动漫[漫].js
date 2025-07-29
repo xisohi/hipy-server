@@ -1,16 +1,1 @@
-var rule = {
-    模板: 'mxpro',
-    title: '大米动漫[漫]',
-    host: 'https://damidm.com/',
-    url: 'show/fyclass--------fypage---.html',
-    searchUrl: '/search/**----------fypage---.html',
-    class_parse: '.navbar-items li;a&&Text;a&&href;/(\\d+).html',
-    二级: {
-        "title": "h1&&Text;.module-info-tag&&Text",
-        "img": ".lazyload&&data-original",
-        "desc": ".module-info-item:eq(1)&&Text;.module-info-item:eq(2)&&Text;.module-info-item:eq(3)&&Text",
-        "content": ".module-info-introduction&&Text",
-        "tabs": ".module-tab-item--small",
-        "lists": ".module-play-list:eq(#id) a"
-    },
-}
+H4sIAK/dWmcC/31QwUrDQBC9+xUhQtrUbkL1luJf6MmKTLPbZGE3G3entVH6A+IveBCEFjyJtyL4M7b9DTdpxJRKB5bdmffezJudgHb0WDDn3Hk4cmysFy/r56/IaclprlWrWxWRo2C2tnqdb94/Vo+L9efblT3XNZ4qgxZOEXMThSEFyakMYiXDmjDWwuImVXfhqIgFGEPqGBU5JMw+ghSlqOmGgY7Ty0oUbpOw0yHkoKhqe5ODNqXVIIPJEDThyKRxBO+D512wKZZ3qtmoH7YHA3riNzt8L582y3lU/0QZbrW5Gzlu2qv1gVTUfhjh2UgRhGRbdrt/Gi6TUhEIuC+EAup5FBCI0jzhGYgmlTITV9xm09JyxG7bPf+/kb/o6UH0zN/3FasMWYb78zLUNo2Rq2xfhTA0TYnNqymEGAliZxvBDe5wcwEFKaulpWNOfQfcij7rHs1+AF8IfAF7AgAA

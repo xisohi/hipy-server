@@ -1048,6 +1048,7 @@ function fixAdM3u8Ai(m3u8_url, headers) {
     let option = headers ? {
         headers: headers
     } : {};
+
     function b(s1, s2) {
         let i = 0;
         while (i < s1.length) {
@@ -1058,9 +1059,11 @@ function fixAdM3u8Ai(m3u8_url, headers) {
         }
         return i
     }
+
     function reverseString(str) {
         return str.split("").reverse().join("")
     }
+
     let m3u8 = request(m3u8_url, option);
     m3u8 = m3u8.trim().split("\n").map(it => it.startsWith("#") ? it : urljoin(m3u8_url, it)).join("\n");
     m3u8 = m3u8.replace(/\n\n/gi, "\n");
@@ -1075,50 +1078,6 @@ function fixAdM3u8Ai(m3u8_url, headers) {
     }
     let s = m3u8.trim().split("\n").filter(it => it.trim()).join("\n");
     let ss = s.split("\n");
-    if (m3u8_url.indexOf("ffzy") > 0) {
-        let j = 0
-          , k1 = 0
-          , m = 0
-          , n = 0
-          , t = 0;
-        let s2 = "";
-        for (let i = 0; i < ss.length; i++) {
-            let s = ss[i];
-            let s1 = "";
-            if (s.startsWith("#EXTINF")) {
-                s1 = s.slice(8);
-                n++;
-                if (n == 1)
-                    k1 = i;
-                if (s2.indexOf(s1) == -1) {
-                    s2 = s2 + s1;
-                    m++;
-                }
-                t = t + parseFloat(s1);
-                i++;
-                s = ss[i];
-            }
-            if (s.startsWith("#EXT-X-DISCONTINUITY")) {
-                if (n == 5) {
-                    log("n:" + n);
-                    log("m:" + m);
-                    for (let j = k1; j < k1 + n * 2; j++) {
-                        log(ss[j]);
-                    }
-                    log("广告位置：" + k1);
-                    log("数据条数:" + n);
-                    log("数据种类:" + m);
-                    log("广告时间：" + t.toFixed(5));
-                    ss.splice(k1, 2 * n + 1);
-                    i = i - 2 * n + 1;
-                }
-                t = 0;
-                m = 0;
-                n = 0;
-                s2 = "";
-            }
-        }
-    }
     let firststr = "";
     let maxl = 0;
     let kk = 0;
@@ -1128,12 +1087,10 @@ function fixAdM3u8Ai(m3u8_url, headers) {
     for (let i = 0; i < ss.length; i++) {
         let s = ss[i];
         if (!s.startsWith("#")) {
-            if (kk == 0)
-                firststr = s;
+            if (kk == 0) firststr = s;
             if (kk > 0) {
                 if (maxl > b(firststr, s) + 1) {
-                    if (secondstr.length < 5)
-                        secondstr = s;
+                    if (secondstr.length < 5) secondstr = s;
                     kkk2++
                 } else {
                     maxl = b(firststr, s);
@@ -1141,12 +1098,10 @@ function fixAdM3u8Ai(m3u8_url, headers) {
                 }
             }
             kk++;
-            if (kk >= 30)
-                break
+            if (kk >= 30) break
         }
     }
-    if (kkk2 > kkk1)
-        firststr = secondstr;
+    if (kkk2 > kkk1) firststr = secondstr;
     let firststrlen = firststr.length;
     let ml = Math.round(ss.length / 2).toString().length;
     let maxc = 0;
@@ -1160,8 +1115,7 @@ function fixAdM3u8Ai(m3u8_url, headers) {
             }
         }
         return false
-    }
-    );
+    });
     log("最后一条切片：" + laststr);
     let ad_urls = [];
     for (let i = 0; i < ss.length; i++) {

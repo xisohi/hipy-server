@@ -1,11 +1,1 @@
-muban.首图2.二级.tabs = '.tabt3&&span';
-muban.首图2.二级.lists = '.ulNumList&&ul&&li';
-var rule = {
-    title: '动漫网[漫]',
-    模板: '首图2',
-    host: 'https://www.dongman8.cc',
-    url: '/vodtype/fyclass-fypage.html',
-    searchUrl: '/vodsearch/**----------fypage---.html',
-    class_parse: '.stui-header__menu li:gt(0):lt(4);a&&Text;a&&href;.*/(.*?).html',
-    搜索: 'ul.stui-vodlist__media:eq(0),ul.stui-vodlist:eq(0),#searchList li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
-}
+H4sIALDdWmcC/21Qy0rDQBTd9ysCwqQNzUTUhSSIPyCudCVSbpNpMjB5OHOntYo/IC5040Zd6EILbl0VHz9jU/wLJ02QKt7NfZ1z7uGmug8Z/Xq8nt28r9HP6cV8+kQR+srasuyqwHVCVAGZHbTS/7CCK6zBWuzqdMe0hGhBiOCGMgRpSS2YAZy2LBPIUTDfsmfnk/L1ef52dWDSod1dLMvJfXn3YbbNjWac5ArNMEEslO95o9GIRnkWp5Bt0jBsQFoKg/GGeYTjgnmDcShAKXcwLiBmNMFUNEDFQIbJ/g+87j3HcX+iJplimbfQ6xUgVeWfKtTcTRhETPZ6Kcu0JbgfY3u14wtsb3QCIGSPHWOVE8kGAXW8NnW2O8ua5eXt/OXByGlRCxo/1UMrxYiDz46MXvfPspmu1Marh5vT1ZnFbwMq4GQscogIiQDBzSWPeQYioAUPXTSWfhszVs6+AVTVwMEGAgAA

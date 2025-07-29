@@ -1,11 +1,1 @@
-Object.assign(muban.mxpro.二级, {
-    tab_text: 'div--small&&Text',
-});
-var rule = {
-    模板: 'mxpro',
-    title: '嘀哩嘀哩',
-    host: 'https://www.dilidili23.com',
-    url: '/index.php/vod/show/id/fyclass/page/fypage.html',
-    searchUrl: '/index.php/vod/search/page/fypage/wd/**.html',
-    class_parse: '.navbar-items li:gt(0):lt(8);a&&Text;a&&href;/(\\d+).html',
-}
+H4sIALfdWmcC/5WTzXLTMBDHz8lT6MDUckikfjBMx8Fw4UIP9FA6HAiTkW0lVpAlI8n5KM0MD8CNCxcOnIBX6IWXoeU1kGQH0iZhBs3YsrT//e2uvDpNJjQ1iGjNxgIWVUIEKualkujn1YdfV1+74F0b2GFIMjR0biIQZGza6+mCcL6398JuBd32Muy3p0QBVXEK4sbl5tuXm88/rIPnWZXnMMOp3bv+9P764/f63ZhyqR0+N6aMMJ7NZihjnLnn8AilsmhkleJWhZnI6ByVeYmnMsM6lzPMMjxapNzWgksypnbhJpSbgje+mhKV5udbCd607ohnGe501t09e1gSpV0JSJBpQlSPGVpowFk0NnA/jLiBx2Gf1Gfj5lzRUR/DwSC7H65oLU4uFhG4N9HIyDOjmBhDGIL4sT27VotTA5zQHuXJ2elz5CNCRd9WVBvIRFmZEBXEpDnECpScLKgaos6TGNpX+AiHrw5e2z9Sg+x5WY7DIfvpdtkIQL+mIlWL0oA4BsFBEPrYrVpfCapTUlJol6HdXgLKNQVbXQ93uCZE04cPntJUZjXHg9qOgQeoOKqOMTKuIm9rumY1XOqJzBYWuCrcyfobIs5sPKtyYqRLzgwMBiLYonQRz32KouL8tn0kFYArHJCjGns3KU9ygthPyP64At6J5IYr0QuoyPRLZnIY+HqDcBvRjb+52SonkglXbdcxtuB9L0qhJaeIyzFsnHcoE0XJm03Tsr175Vvsz0VeH5N5BPa7G9v+Uq5quLx0601Rc3H2bweuM2v6y7fRv6MbyvkzfTL37bAjk/8K73qytbSo5W8Fh7N2DQUAAA==

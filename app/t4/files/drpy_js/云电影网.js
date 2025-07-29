@@ -1,18 +1,1 @@
-var rule = {
-    title: '云电影网',
-    模板: '首图',
-    host: 'https://www.ydy8.com',
-    url: '/fyclass/indexfypage.html[/fyclass/index.html]',
-    searchUrl: '/search.php?page=2&searchword=**&searchtype=',
-    class_name: '电影&电视剧&综艺&动漫',
-    class_url: 'dy&tv&zy&dm',
-    二级: {
-        "title": ".myui-content__detail .title&&Text;.myui-content__detail p:eq(-2)&&Text",
-        "img": ".myui-content__thumb .lazyload&&data-original",
-        "desc": ".myui-content__detail p:eq(0)&&Text;.myui-content__detail p:eq(1)&&Text;.myui-content__detail p:eq(2)&&Text",
-        "content": "#jq--h3&&Text",
-        "tabs": ".tab-pane&&p",
-        "lists": ".myui-content__list:eq(#id) li"
-    },
-    搜索: '#searchList li;a&&title;.lazyload&&data-original;.text-right&&Text;a&&href',
-}
+H4sIAMLdWmcC/41STU8bMRC991dYG8k0iN0UuKCNIv4AR3qqUGTWTmzk/WA9IRjEFQnUQ5EqLsABDgSJExJcwtefIVn6L+r1GgEiqPVld2beG7834w2So7wnGWqh7S/IHBAgWYimnoYHxe+b0f1VcX8wNWNL44vT8cmjqf05PxwdPbgsTxWYHAfIVNho9Pv9QFO9EERp7BC9XBpAo6MjSZRqiISyzY7OSJcFHGL5433F5lYcVTGSR/x71aAKgoxniyW5NYerTD/NaWt62kWgM9ZydNu2nZC4dFTZwebzPNgd7Q1wcXv3vDfEo/2L8d3lO0almGoMG3hLY/ri5Gn4sxgOQjeq8nh2Xl6IvCDWPeFHaQIsgXabMiBCosDWMV5mm9CcDMlCtv7Vn6tXIG/mtbeIuxM6A+/FqyiQZEvLlFCMKQHip7noioTIt3zKVPS5NHvvt/q/tc3+B2aSfAcsFdTW1n2fz3/EAFlVVqL58TOSmFFlb+tSKFATPJT58t6aoHUkhWcZO+6d/jours/MAmvVi1gyWINpEoztNpqfza4ZgJHnm4iDs2w4PGcds/+dv3p6xAwrAwAA
